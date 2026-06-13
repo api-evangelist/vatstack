@@ -1,0 +1,29 @@
+{
+  "name": "Evidence",
+  "description": "Store pieces of evidence that confirm your customer\u2019s location. Evidence object can be attached to a supply object and it can only be attached to one supply object at a time.",
+  "example": {
+    "bank_address": {
+      "country_code": "string",
+      "name": "string"
+    },
+    "billing_address": {
+      "city": "string",
+      "country_code": "string",
+      "line_1": "string",
+      "line_2": "string",
+      "postal_code": "string",
+      "state": "string"
+    },
+    "created": "2024-01-01T00:00:00.000Z",
+    "ip_address": {
+      "label": "string",
+      "provider": "string",
+      "city": "string",
+      "country_code": "string",
+      "state": "string"
+    },
+    "id": "string",
+    "required_count": 0,
+    "updated": "2024-01-01T00:00:00.000Z"
+  }
+}

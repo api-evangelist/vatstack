@@ -1,0 +1,8 @@
+{
+  "name": "Error",
+  "description": "Error response from the Vatstack API.",
+  "example": {
+    "code": "string",
+    "message": "string"
+  }
+}

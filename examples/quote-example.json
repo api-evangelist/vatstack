@@ -1,0 +1,43 @@
+{
+  "name": "Quote",
+  "description": "The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the entire VAT-compliant business logic for you. All VAT rules have been centralized so that every response is directly actionable.",
+  "example": {
+    "amount": 0,
+    "amount_total": 0,
+    "category": "string",
+    "country_code": "string",
+    "country_name": "string",
+    "created": "2024-01-01T00:00:00.000Z",
+    "id": "string",
+    "ip_address": "string",
+    "local_name": "string",
+    "member_state": false,
+    "updated": "2024-01-01T00:00:00.000Z",
+    "validation": {
+      "active": false,
+      "code": "string",
+      "company_address": "string",
+      "company_name": "string",
+      "company_type": "string",
+      "consultation_number": "string",
+      "country_code": "string",
+      "created": "2024-01-01T00:00:00.000Z",
+      "id": "string",
+      "query": "string",
+      "requested": "2024-01-01T00:00:00.000Z",
+      "type": "au_gst",
+      "updated": "2024-01-01T00:00:00.000Z",
+      "valid": false,
+      "valid_format": false,
+      "vat_number": "string"
+    },
+    "vat": {
+      "abbreviation": "string",
+      "amount": 0,
+      "inclusive": "string",
+      "local_name": "string",
+      "rate": 0.0,
+      "rate_type": "string"
+    }
+  }
+}

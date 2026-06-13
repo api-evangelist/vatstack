@@ -1,0 +1,354 @@
+{
+  "name": "Vatstack API Vocabulary",
+  "description": "Terms and concepts used across the Vatstack VAT validation API",
+  "terms": [
+    {
+      "term": "created",
+      "type": "string",
+      "description": "ISO date at which the object was created.",
+      "schema": "batch"
+    },
+    {
+      "term": "id",
+      "type": "string",
+      "description": "Unique identifier for the object.",
+      "schema": "batch"
+    },
+    {
+      "term": "name",
+      "type": "string",
+      "description": "Descriptive name of the object.",
+      "schema": "batch"
+    },
+    {
+      "term": "queries",
+      "type": "array",
+      "description": "Array of all queries in the order of your input.",
+      "schema": "batch"
+    },
+    {
+      "term": "queries_ignored",
+      "type": "array",
+      "description": "Array of all queries which are of invalid format. Ignored queries are automatically identified upon your input. Its items will not be validated.",
+      "schema": "batch"
+    },
+    {
+      "term": "scheduled",
+      "type": "string",
+      "description": "ISO date at which the object status was changed to `scheduled`. Defaults to `null` while the status is `pending`.",
+      "schema": "batch"
+    },
+    {
+      "term": "succeeded_count",
+      "type": "integer",
+      "description": "The number of `validations` where `valid` is `true` or `false`. It\u2019s an indicator for how far the batch has progressed.",
+      "schema": "batch"
+    },
+    {
+      "term": "updated",
+      "type": "string",
+      "description": "ISO date at which the object was updated.",
+      "schema": "batch"
+    },
+    {
+      "term": "validations",
+      "type": "array",
+      "description": "Array of the first 20 validation objects in the order of `queries`. If an `id` is shown in the object, it was created for the batch and you can retrieve it individually. See [validation object](https://vatstack.com/docs/validations) for reference.",
+      "schema": "batch"
+    },
+    {
+      "term": "code",
+      "type": "string",
+      "description": "For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).",
+      "schema": "error"
+    },
+    {
+      "term": "message",
+      "type": "string",
+      "description": "Human-readable message providing more details about the error.",
+      "schema": "error"
+    },
+    {
+      "term": "bank_address",
+      "type": "object",
+      "description": "",
+      "schema": "evidence"
+    },
+    {
+      "term": "billing_address",
+      "type": "object",
+      "description": "",
+      "schema": "evidence"
+    },
+    {
+      "term": "ip_address",
+      "type": "object",
+      "description": "",
+      "schema": "evidence"
+    },
+    {
+      "term": "required_count",
+      "type": "integer",
+      "description": "Required pieces of evidence according to your account\u2019s regional settings.",
+      "schema": "evidence"
+    },
+    {
+      "term": "supplies",
+      "type": "object",
+      "description": "",
+      "schema": "hit"
+    },
+    {
+      "term": "amount",
+      "type": "integer",
+      "description": "",
+      "schema": "quote"
+    },
+    {
+      "term": "amount_total",
+      "type": "integer",
+      "description": "",
+      "schema": "quote"
+    },
+    {
+      "term": "category",
+      "type": "string",
+      "description": "Category of the digital product. Defaults to `null` if no category was specified in the request or if the category cannot be applied for the `country_code`.",
+      "schema": "quote"
+    },
+    {
+      "term": "country_code",
+      "type": "string",
+      "description": "2-letter ISO country code.",
+      "schema": "quote"
+    },
+    {
+      "term": "country_name",
+      "type": "string",
+      "description": "Corresponding English name of `country_code`.",
+      "schema": "quote"
+    },
+    {
+      "term": "local_name",
+      "type": "string",
+      "description": "Localized name of the VAT identification number.",
+      "schema": "quote"
+    },
+    {
+      "term": "member_state",
+      "type": "boolean",
+      "description": "Boolean indicating whether `country_code` is an EU member state.",
+      "schema": "quote"
+    },
+    {
+      "term": "validation",
+      "type": "object",
+      "description": "",
+      "schema": "quote"
+    },
+    {
+      "term": "vat",
+      "type": "object",
+      "description": "",
+      "schema": "quote"
+    },
+    {
+      "term": "abbreviation",
+      "type": "string",
+      "description": "Abbreviation of `local_name`.",
+      "schema": "rate"
+    },
+    {
+      "term": "categories",
+      "type": "object",
+      "description": "",
+      "schema": "rate"
+    },
+    {
+      "term": "currency",
+      "type": "string",
+      "description": "3-letter ISO 4217 local currency code.",
+      "schema": "rate"
+    },
+    {
+      "term": "reduced_rates",
+      "type": "array",
+      "description": "3-letter ISO 4217 local currency code.",
+      "schema": "rate"
+    },
+    {
+      "term": "standard_rate",
+      "type": "number",
+      "description": "Standard VAT rate in percent.",
+      "schema": "rate"
+    },
+    {
+      "term": "vat_abbreviation",
+      "type": "string",
+      "description": "Abbreviation of `vat_local_name`.",
+      "schema": "rate"
+    },
+    {
+      "term": "vat_local_name",
+      "type": "string",
+      "description": "Localized name of the VAT.",
+      "schema": "rate"
+    },
+    {
+      "term": "amount_refunded",
+      "type": "integer",
+      "description": "",
+      "schema": "supply"
+    },
+    {
+      "term": "description",
+      "type": "string",
+      "description": "An arbitrary string to describe the supplied item. Often useful for displaying to users.",
+      "schema": "supply"
+    },
+    {
+      "term": "evidence",
+      "type": "object",
+      "description": "Populated evidence object if an ID is attached. You can attach an evidence object with the `evidence` body parameter in the POST request. Defaults to `null`. See [evidence object](https://vatstack.com/docs/evidences) for reference.",
+      "schema": "supply"
+    },
+    {
+      "term": "evidence_status",
+      "type": "string",
+      "description": "Status of whether the attached evidence object sufficiently proves the place of supply established in `country_code`. Will be either `sufficient` or `insufficient`.",
+      "schema": "supply"
+    },
+    {
+      "term": "invoice_number",
+      "type": "string",
+      "description": "A custom string for the invoice number issued to the customer. It\u2019s advisable to follow sequential numbering.",
+      "schema": "supply"
+    },
+    {
+      "term": "issued",
+      "type": "string",
+      "description": "ISO date at which `invoice_number` was issued.",
+      "schema": "supply"
+    },
+    {
+      "term": "notes",
+      "type": "string",
+      "description": "A custom string for additional notes.",
+      "schema": "supply"
+    },
+    {
+      "term": "active",
+      "type": "boolean",
+      "description": "Boolean indicating whether the company exists and is active. Use `valid` to check whether the business is also VAT-registered.",
+      "schema": "validation"
+    },
+    {
+      "term": "company_address",
+      "type": "string",
+      "description": "Address of the company the VAT number is associated with. Servers of Germany and Spain won\u2019t return a value for privacy reasons and will default to `null`.",
+      "schema": "validation"
+    },
+    {
+      "term": "company_name",
+      "type": "string",
+      "description": "Name of the company the VAT number is associated with. Servers of Germany and Spain won\u2019t return a value for privacy reasons and will default to `null`.",
+      "schema": "validation"
+    },
+    {
+      "term": "company_type",
+      "type": "string",
+      "description": "Type of the company entity returned by the respective government service (where available).",
+      "schema": "validation"
+    },
+    {
+      "term": "consultation_number",
+      "type": "string",
+      "description": "If you save your own VAT number in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT number at the `requested` date, and obtained a validation result.",
+      "schema": "validation"
+    },
+    {
+      "term": "query",
+      "type": "string",
+      "description": "Your original query.",
+      "schema": "validation"
+    },
+    {
+      "term": "requested",
+      "type": "string",
+      "description": "ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time.",
+      "schema": "validation"
+    },
+    {
+      "term": "type",
+      "type": "string",
+      "description": "Type of VAT number.",
+      "schema": "validation"
+    },
+    {
+      "term": "valid",
+      "type": "boolean",
+      "description": "Boolean indicating whether the vat_number is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you.",
+      "schema": "validation"
+    },
+    {
+      "term": "valid_format",
+      "type": "boolean",
+      "description": "Boolean indicating whether the VAT number contained in `query` is in a valid format.",
+      "schema": "validation"
+    },
+    {
+      "term": "vat_number",
+      "type": "string",
+      "description": "VAT number extracted from your query without the country code.",
+      "schema": "validation"
+    },
+    {
+      "term": "limit",
+      "type": "integer",
+      "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+      "schema": "parameter"
+    },
+    {
+      "term": "page",
+      "type": "integer",
+      "description": "Integer for the current page.",
+      "schema": "parameter"
+    },
+    {
+      "term": "status",
+      "type": "string",
+      "description": "Show only objects with the given `status`.",
+      "schema": "parameter"
+    },
+    {
+      "term": "issued_since",
+      "type": "string",
+      "description": "Show only objects where the `issued` date is this date or later. Format `YYYY-MM-DD`.",
+      "schema": "parameter"
+    },
+    {
+      "term": "issued_until",
+      "type": "string",
+      "description": "Show only objects where the `issued` date is this date or earlier. Format `YYYY-MM-DD`.",
+      "schema": "parameter"
+    },
+    {
+      "term": "batch",
+      "type": "string",
+      "description": "Show only objects that belong to a batch with the given identifier.",
+      "schema": "parameter"
+    },
+    {
+      "term": "requested_since",
+      "type": "string",
+      "description": "Show only objects where the `requested` date is this date or later. Format `YYYY-MM-DD`.",
+      "schema": "parameter"
+    },
+    {
+      "term": "requested_until",
+      "type": "string",
+      "description": "Show only objects where the `requested` date is this date or earlier. Format `YYYY-MM-DD`.",
+      "schema": "parameter"
+    }
+  ]
+}

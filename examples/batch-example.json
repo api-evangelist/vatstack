@@ -1,0 +1,38 @@
+{
+  "name": "Batch",
+  "description": "Batch mass VAT number validations for due dates. Add VAT numbers in bulk or append VAT numbers incrementally to your existing batch process, then start it whenever required.",
+  "example": {
+    "created": "2024-01-01T00:00:00.000Z",
+    "id": "string",
+    "name": "string",
+    "queries": [
+      "string"
+    ],
+    "queries_ignored": [
+      "string"
+    ],
+    "scheduled": "2024-01-01T00:00:00.000Z",
+    "succeeded_count": 0,
+    "updated": "2024-01-01T00:00:00.000Z",
+    "validations": [
+      {
+        "active": false,
+        "code": "string",
+        "company_address": "string",
+        "company_name": "string",
+        "company_type": "string",
+        "consultation_number": "string",
+        "country_code": "string",
+        "created": "2024-01-01T00:00:00.000Z",
+        "id": "string",
+        "query": "string",
+        "requested": "2024-01-01T00:00:00.000Z",
+        "type": "au_gst",
+        "updated": "2024-01-01T00:00:00.000Z",
+        "valid": false,
+        "valid_format": false,
+        "vat_number": "string"
+      }
+    ]
+  }
+}

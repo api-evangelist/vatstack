@@ -1,0 +1,26 @@
+{
+  "name": "Rate",
+  "description": "Keep the rates of your application up-to-date with a regular VAT rate lookup. This ensures that your invoice states the correct VAT across EU Member States. We have also started to add countries outside the EU and will keep them updated.",
+  "example": {
+    "abbreviation": "string",
+    "categories": {
+      "audiobook": 0.0,
+      "broadcasting": 0.0,
+      "ebook": 0.0,
+      "eperiodical": 0.0,
+      "eservice": 0.0,
+      "telecommunication": 0.0
+    },
+    "country_code": "string",
+    "country_name": "string",
+    "currency": "string",
+    "local_name": "string",
+    "member_state": false,
+    "reduced_rates": [
+      0.0
+    ],
+    "standard_rate": 0.0,
+    "vat_abbreviation": "string",
+    "vat_local_name": "string"
+  }
+}

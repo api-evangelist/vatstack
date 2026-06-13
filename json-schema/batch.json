@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/batch.json",
+  "title": "Batch",
+  "type": "object",
+  "description": "Batch mass VAT number validations for due dates. Add VAT numbers in bulk or append VAT numbers incrementally to your existing batch process, then start it whenever required.",
+  "properties": {
+    "created": {
+      "type": "string",
+      "description": "ISO date at which the object was created.",
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the object.",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Descriptive name of the object."
+    },
+    "queries": {
+      "type": "array",
+      "description": "Array of all queries in the order of your input.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "queries_ignored": {
+      "type": "array",
+      "description": "Array of all queries which are of invalid format. Ignored queries are automatically identified upon your input. Its items will not be validated.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scheduled": {
+      "type": "string",
+      "description": "ISO date at which the object status was changed to `scheduled`. Defaults to `null` while the status is `pending`.",
+      "format": "date-time"
+    },
+    "succeeded_count": {
+      "type": "integer",
+      "description": "The number of `validations` where `valid` is `true` or `false`. It\u2019s an indicator for how far the batch has progressed.",
+      "format": "int32"
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO date at which the object was updated.",
+      "format": "date-time"
+    },
+    "validations": {
+      "type": "array",
+      "description": "Array of the first 20 validation objects in the order of `queries`. If an `id` is shown in the object, it was created for the batch and you can retrieve it individually. See [validation object](https://vatstack.com/docs/validations) for reference.",
+      "items": {
+        "$ref": "#/components/schemas/validation"
+      }
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "vatstack": "https://vatstack.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "id": "@id",
+    "type": "@type",
+
+    "Validation": "vatstack:Validation",
+    "Rate": "vatstack:Rate",
+    "Quote": "vatstack:Quote",
+    "Batch": "vatstack:Batch",
+    "Evidence": "vatstack:Evidence",
+    "Supply": "vatstack:Supply",
+    "Hit": "vatstack:Hit",
+
+    "vat_number": {
+      "@id": "vatstack:vatNumber",
+      "@type": "xsd:string"
+    },
+    "valid": {
+      "@id": "vatstack:valid",
+      "@type": "xsd:boolean"
+    },
+    "company_name": {
+      "@id": "schema:legalName",
+      "@type": "xsd:string"
+    },
+    "company_address": {
+      "@id": "schema:address",
+      "@type": "xsd:string"
+    },
+    "country_code": {
+      "@id": "schema:addressCountry",
+      "@type": "xsd:string"
+    },
+    "amount": {
+      "@id": "schema:price",
+      "@type": "xsd:integer"
+    },
+    "amount_total": {
+      "@id": "vatstack:amountTotal",
+      "@type": "xsd:integer"
+    },
+    "tax_amount": {
+      "@id": "vatstack:taxAmount",
+      "@type": "xsd:integer"
+    },
+    "currency": {
+      "@id": "schema:priceCurrency",
+      "@type": "xsd:string"
+    },
+    "standard_rate": {
+      "@id": "vatstack:standardRate",
+      "@type": "xsd:number"
+    },
+    "reduced_rate": {
+      "@id": "vatstack:reducedRate",
+      "@type": "xsd:number"
+    },
+    "created": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updated": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "requested": {
+      "@id": "vatstack:requested",
+      "@type": "xsd:dateTime"
+    },
+    "status": {
+      "@id": "schema:status",
+      "@type": "xsd:string"
+    },
+    "ip_address": {
+      "@id": "vatstack:ipAddress",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "schema:category",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "schema:amount",
+      "@type": "xsd:integer"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "total": {
+      "@id": "vatstack:total",
+      "@type": "xsd:integer"
+    },
+    "has_more": {
+      "@id": "vatstack:hasMore",
+      "@type": "xsd:boolean"
+    }
+  }
+}

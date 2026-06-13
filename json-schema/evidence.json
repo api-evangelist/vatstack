@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/evidence.json",
+  "title": "Evidence",
+  "type": "object",
+  "description": "Store pieces of evidence that confirm your customer\u2019s location. Evidence object can be attached to a supply object and it can only be attached to one supply object at a time.",
+  "properties": {
+    "bank_address": {
+      "type": "object",
+      "properties": {
+        "country_code": {
+          "type": "string",
+          "description": "2-letter ISO country code of the bank or payment source.",
+          "maxLength": 2,
+          "minLength": 2
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the bank or payment source."
+        }
+      }
+    },
+    "billing_address": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "City of the customer\u2019s billing address."
+        },
+        "country_code": {
+          "type": "string",
+          "description": "2-letter ISO country code of the customer\u2019s billing address.",
+          "maxLength": 2,
+          "minLength": 2
+        },
+        "line_1": {
+          "type": "string",
+          "description": "Line 1 of the customer\u2019s billing address."
+        },
+        "line_2": {
+          "type": "string",
+          "description": "Line 2 of the customer\u2019s billing address."
+        },
+        "postal_code": {
+          "type": "string",
+          "description": "Postal code of the customer\u2019s billing address."
+        },
+        "state": {
+          "type": "string",
+          "description": "State of the customer\u2019s billing address."
+        }
+      }
+    },
+    "created": {
+      "type": "string",
+      "description": "ISO date at which the object was created.",
+      "format": "date-time"
+    },
+    "ip_address": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "The same IP address coming from the `ip_address.label` body parameter which will be geolocated automatically."
+        },
+        "provider": {
+          "type": "string",
+          "description": "Provider used to geolocate `ip_address.label`. We use MaxMind\u00ae GeoIP2 geolocation technology by default but have a number of fallback providers."
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the geolocated IP address."
+        },
+        "country_code": {
+          "type": "string",
+          "description": "2-letter ISO country code of the geolocated IP address.",
+          "maxLength": 2,
+          "minLength": 2
+        },
+        "state": {
+          "type": "string",
+          "description": "State of the geolocated IP address."
+        }
+      }
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the object.",
+      "format": "uuid"
+    },
+    "required_count": {
+      "type": "integer",
+      "description": "Required pieces of evidence according to your account\u2019s regional settings.",
+      "format": "int32"
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO date at which the object was updated.",
+      "format": "date-time"
+    }
+  }
+}

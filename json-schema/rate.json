@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/rate.json",
+  "title": "Rate",
+  "type": "object",
+  "description": "Keep the rates of your application up-to-date with a regular VAT rate lookup. This ensures that your invoice states the correct VAT across EU Member States. We have also started to add countries outside the EU and will keep them updated.",
+  "properties": {
+    "abbreviation": {
+      "type": "string",
+      "description": "Abbreviation of `local_name`."
+    },
+    "categories": {
+      "type": "object",
+      "properties": {
+        "audiobook": {
+          "type": "number",
+          "format": "double"
+        },
+        "broadcasting": {
+          "type": "number",
+          "format": "double"
+        },
+        "ebook": {
+          "type": "number",
+          "format": "double"
+        },
+        "eperiodical": {
+          "type": "number",
+          "format": "double"
+        },
+        "eservice": {
+          "type": "number",
+          "format": "double"
+        },
+        "telecommunication": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "country_code": {
+      "type": "string",
+      "description": "2-letter ISO country code.",
+      "maxLength": 2,
+      "minLength": 2
+    },
+    "country_name": {
+      "type": "string",
+      "description": "Corresponding English name of `country_code`."
+    },
+    "currency": {
+      "type": "string",
+      "description": "3-letter ISO 4217 local currency code.",
+      "maxLength": 3,
+      "minLength": 3
+    },
+    "local_name": {
+      "type": "string",
+      "description": "Localized name of the VAT identification number."
+    },
+    "member_state": {
+      "type": "boolean",
+      "description": "Boolean indicating whether the country is an EU Member State."
+    },
+    "reduced_rates": {
+      "type": "array",
+      "description": "3-letter ISO 4217 local currency code.",
+      "items": {
+        "type": "number",
+        "format": "double"
+      }
+    },
+    "standard_rate": {
+      "type": "number",
+      "description": "Standard VAT rate in percent.",
+      "format": "double"
+    },
+    "vat_abbreviation": {
+      "type": "string",
+      "description": "Abbreviation of `vat_local_name`."
+    },
+    "vat_local_name": {
+      "type": "string",
+      "description": "Localized name of the VAT."
+    }
+  }
+}

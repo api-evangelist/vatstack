@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/quote.json",
+  "title": "Quote",
+  "type": "object",
+  "description": "The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the entire VAT-compliant business logic for you. All VAT rules have been centralized so that every response is directly actionable.",
+  "properties": {
+    "amount": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "amount_total": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "category": {
+      "type": "string",
+      "description": "Category of the digital product. Defaults to `null` if no category was specified in the request or if the category cannot be applied for the `country_code`."
+    },
+    "country_code": {
+      "type": "string",
+      "description": "2-letter ISO country code.",
+      "maxLength": 2,
+      "minLength": 2
+    },
+    "country_name": {
+      "type": "string",
+      "description": "Corresponding English name of `country_code`."
+    },
+    "created": {
+      "type": "string",
+      "description": "ISO date at which the object was created.",
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the object.",
+      "format": "uuid"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "The same IP address coming from the `ip_address` body parameter, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided."
+    },
+    "local_name": {
+      "type": "string",
+      "description": "Localized name of the VAT identification number."
+    },
+    "member_state": {
+      "type": "boolean",
+      "description": "Boolean indicating whether `country_code` is an EU member state."
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO date at which the object was updated.",
+      "format": "date-time"
+    },
+    "validation": {
+      "type": "object",
+      "$ref": "#/components/schemas/validation"
+    },
+    "vat": {
+      "type": "object",
+      "properties": {
+        "abbreviation": {
+          "type": "string",
+          "description": "Abbreviation of `vat.local_name`."
+        },
+        "amount": {
+          "type": "integer",
+          "description": "VAT amount in cents.",
+          "format": "int32"
+        },
+        "inclusive": {
+          "type": "string",
+          "description": "Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay.",
+          "default": false
+        },
+        "local_name": {
+          "type": "string",
+          "description": "Localized name of the VAT."
+        },
+        "rate": {
+          "type": "number",
+          "description": "VAT rate applied for the calculation. If member_state is `false`, the value will be `0`.",
+          "format": "double"
+        },
+        "rate_type": {
+          "type": "string",
+          "description": "Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`."
+        }
+      }
+    }
+  }
+}

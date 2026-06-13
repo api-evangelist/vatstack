@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/supply.json",
+  "title": "Supply",
+  "type": "object",
+  "description": "Supplies are transactions of telecommunications, broadcasting and electronic (TBE) services. To document pieces of evidence for the place of supply, you can attach [evidence objects](https://vatstack.com/docs/evidences) to a supply object. Supplies are also used to automatically generate a quarterly tax report with currency conversion at official exchange rates.",
+  "properties": {
+    "amount": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "amount_refunded": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "amount_total": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "country_code": {
+      "type": "string",
+      "description": "2-letter ISO country code of the place of supply that is relevant for the `vat.rate`.",
+      "maxLength": 2,
+      "minLength": 2
+    },
+    "created": {
+      "type": "string",
+      "description": "ISO date at which the object was created.",
+      "format": "date-time"
+    },
+    "currency": {
+      "type": "string",
+      "description": "3-letter ISO 4217 currency code used to charge the `amount`.",
+      "maxLength": 3,
+      "minLength": 3
+    },
+    "description": {
+      "type": "string",
+      "description": "An arbitrary string to describe the supplied item. Often useful for displaying to users."
+    },
+    "evidence": {
+      "type": "object",
+      "description": "Populated evidence object if an ID is attached. You can attach an evidence object with the `evidence` body parameter in the POST request. Defaults to `null`. See [evidence object](https://vatstack.com/docs/evidences) for reference.",
+      "$ref": "#/components/schemas/evidence"
+    },
+    "evidence_status": {
+      "type": "string",
+      "description": "Status of whether the attached evidence object sufficiently proves the place of supply established in `country_code`. Will be either `sufficient` or `insufficient`."
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the object.",
+      "format": "uuid"
+    },
+    "invoice_number": {
+      "type": "string",
+      "description": "A custom string for the invoice number issued to the customer. It\u2019s advisable to follow sequential numbering."
+    },
+    "issued": {
+      "type": "string",
+      "description": "ISO date at which `invoice_number` was issued.",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string",
+      "description": "A custom string for the name of the customer."
+    },
+    "notes": {
+      "type": "string",
+      "description": "A custom string for additional notes."
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO date at which the object was updated.",
+      "format": "date-time"
+    },
+    "validation": {
+      "type": "object",
+      "description": "Populated validation object if an ID is attached. You can attach a validation object with the `validation` body parameter in the POST request. Defaults to `null`. See [validation object](https://vatstack.com/docs/validations) for reference.",
+      "$ref": "#/components/schemas/validation"
+    },
+    "vat": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "integer",
+          "description": "VAT amount in cents.",
+          "format": "int32"
+        },
+        "inclusive": {
+          "type": "string",
+          "description": "Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated.",
+          "default": false
+        },
+        "rate": {
+          "type": "number",
+          "description": "VAT rate applicable for the place of supply established in `country_code`.",
+          "format": "double"
+        },
+        "rate_type": {
+          "type": "string",
+          "description": "Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`."
+        }
+      }
+    }
+  },
+  "required": [
+    "amount",
+    "country_code",
+    "currency",
+    "invoice_number",
+    "issued"
+  ]
+}

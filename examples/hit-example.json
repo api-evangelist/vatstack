@@ -1,0 +1,14 @@
+{
+  "name": "Hit",
+  "description": "Retrieve the number of hits you have used for the running month and the total capacity allocated to your current subscription plan.",
+  "example": {
+    "supplies": {
+      "capacity": 0,
+      "used": 0
+    },
+    "validations": {
+      "capacity": 0,
+      "used": 0
+    }
+  }
+}

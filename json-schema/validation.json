@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/validation.json",
+  "title": "Validation",
+  "type": "object",
+  "description": "Validate your business customer\u2019s VAT number against official government servers in real-time. The API asynchronously validates VAT numbers for you if government services experience downtime.",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "description": "Boolean indicating whether the company exists and is active. Use `valid` to check whether the business is also VAT-registered.",
+      "default": null
+    },
+    "code": {
+      "type": "string",
+      "description": "In the event of an error, this field will contain the error code."
+    },
+    "company_address": {
+      "type": "string",
+      "description": "Address of the company the VAT number is associated with. Servers of Germany and Spain won\u2019t return a value for privacy reasons and will default to `null`.",
+      "default": null
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Name of the company the VAT number is associated with. Servers of Germany and Spain won\u2019t return a value for privacy reasons and will default to `null`.",
+      "default": null
+    },
+    "company_type": {
+      "type": "string",
+      "description": "Type of the company entity returned by the respective government service (where available).",
+      "default": null
+    },
+    "consultation_number": {
+      "type": "string",
+      "description": "If you save your own VAT number in your dashboard, the reply will contain a unique consultation number. The consultation number enables you to prove to a tax administration of a Member State that you have checked a VAT number at the `requested` date, and obtained a validation result.",
+      "default": null
+    },
+    "country_code": {
+      "type": "string",
+      "description": "2-letter ISO country code. Note that while Greek VAT numbers contain the `EL` country code, our response will return the ISO country code `GR`.",
+      "maxLength": 2,
+      "minLength": 2
+    },
+    "created": {
+      "type": "string",
+      "description": "ISO date at which the object was created.",
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the object.",
+      "format": "uuid"
+    },
+    "query": {
+      "type": "string",
+      "description": "Your original query."
+    },
+    "requested": {
+      "type": "string",
+      "description": "ISO date at which the validation request was originally performed. Types `eu_vat` and `gb_vat` do not specify a time.",
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of VAT number.",
+      "enum": [
+        "au_gst",
+        "ch_vat",
+        "eu_oss_vat",
+        "eu_vat",
+        "gb_vat",
+        "no_vat",
+        "sg_gst"
+      ]
+    },
+    "updated": {
+      "type": "string",
+      "description": "ISO date at which the object was updated.",
+      "format": "date-time"
+    },
+    "valid": {
+      "type": "boolean",
+      "description": "Boolean indicating whether the vat_number is registered for VAT. If government services are down, the value will be `null` and re-checked automatically for you.",
+      "default": null
+    },
+    "valid_format": {
+      "type": "boolean",
+      "description": "Boolean indicating whether the VAT number contained in `query` is in a valid format."
+    },
+    "vat_number": {
+      "type": "string",
+      "description": "VAT number extracted from your query without the country code."
+    }
+  },
+  "required": [
+    "query"
+  ]
+}

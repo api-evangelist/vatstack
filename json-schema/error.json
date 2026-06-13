@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/vatstack/main/json-schema/error.json",
+  "title": "Error",
+  "type": "object",
+  "description": "Error response from the Vatstack API.",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).",
+      "maxLength": 50
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable message providing more details about the error.",
+      "maxLength": 250
+    }
+  }
+}

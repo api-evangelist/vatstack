@@ -1,0 +1,22 @@
+{
+  "name": "Validation",
+  "description": "Validate your business customer\u2019s VAT number against official government servers in real-time. The API asynchronously validates VAT numbers for you if government services experience downtime.",
+  "example": {
+    "active": false,
+    "code": "string",
+    "company_address": "string",
+    "company_name": "string",
+    "company_type": "string",
+    "consultation_number": "string",
+    "country_code": "string",
+    "created": "2024-01-01T00:00:00.000Z",
+    "id": "string",
+    "query": "string",
+    "requested": "2024-01-01T00:00:00.000Z",
+    "type": "au_gst",
+    "updated": "2024-01-01T00:00:00.000Z",
+    "valid": false,
+    "valid_format": false,
+    "vat_number": "string"
+  }
+}
