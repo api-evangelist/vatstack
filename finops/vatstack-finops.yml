@@ -1,0 +1,64 @@
+name: Vatstack FinOps
+description: Financial operations guidance for managing Vatstack API costs covering VAT validation, EU tax rate lookups, price quotes, and compliance record storage across plan tiers.
+url: https://vatstack.com/pricing
+cost_model:
+  type: subscription_plus_overage
+  description: Vatstack uses a base subscription fee per month with a defined number of included API calls (validations and supply records). Usage beyond the included quota is billed at a per-unit overage rate. The Developer plan is free with lower quotas. Quotes and rate lookups are unlimited on all plans.
+unit_costs:
+  - resource: validation
+    description: A VAT ID validation request submitted to VIES or equivalent government service to verify a business VAT number.
+    developer_plan: 0.09
+    small_business_plan: 0.03
+    enterprise_plan: 0.01
+    currency: USD
+    unit: per validation (after monthly quota)
+  - resource: supply
+    description: A VAT sales supply record stored for compliance reporting (EC Sales List, VAT OSS). Each transaction recorded counts as one supply.
+    developer_plan: 0.45
+    small_business_plan: 0.15
+    enterprise_plan: 0.05
+    currency: USD
+    unit: per supply record (after monthly quota)
+  - resource: quote
+    description: A VAT price quote calculation request using the quotes endpoint. Unlimited on all plans, no per-unit cost.
+    cost: 0
+    currency: USD
+    unit: unlimited
+  - resource: rate_lookup
+    description: A VAT rate lookup by country code using the rates endpoint. Unlimited on all plans, no per-unit cost.
+    cost: 0
+    currency: USD
+    unit: unlimited
+optimization:
+  - name: Use Free Dummy Validations for Testing
+    description: The Developer plan includes unlimited dummy validations using test VAT numbers. Always use dummy mode during development and integration testing to avoid consuming paid quota.
+    savings_potential: high
+  - name: Cache VAT Rates Locally
+    description: VAT rates update at midnight local time. Cache rate responses for at least a few hours to reduce repeated lookups. The API itself caches quote history for 3 days.
+    savings_potential: medium
+  - name: Batch Validation Requests
+    description: Use the Batches endpoint to group multiple VAT ID validations into a single operation rather than making individual validation requests, reducing overhead and managing quota consumption efficiently.
+    savings_potential: medium
+  - name: Right-size Your Plan
+    description: Monitor monthly validation and supply record usage via the dashboard. Upgrading from Developer ($0) to Small Business ($15/month) reduces overage cost per validation from $0.09 to $0.03, breaking even at roughly 208 overage validations per month.
+    savings_potential: high
+  - name: Filter Validation Types
+    description: Use the type parameter on validation requests to restrict checks to specific VAT number formats (eu_vat, gb_vat, etc.), avoiding unnecessary lookups against multiple government services when only one is needed.
+    savings_potential: low
+monitoring:
+  - name: Dashboard Usage Tracking
+    description: Monitor real-time validation and supply record consumption in the Vatstack dashboard at dashboard.vatstack.com to track quota usage and forecast overage costs.
+    url: https://dashboard.vatstack.com
+  - name: Webhook Events
+    description: Subscribe to webhook events for validation completion to trigger downstream workflows only when needed, rather than polling the API repeatedly.
+    url: https://vatstack.com/docs/validations
+  - name: Status Page
+    description: Monitor Vatstack API uptime and incidents at the status page to be aware of any service disruptions that could affect validation processing.
+    url: https://status.vatstack.com
+break_even_analysis:
+  - description: At what monthly validation volume does upgrading from Developer (free, $0.09/validation overage) to Small Business ($15/month, $0.03/validation overage) become cost-effective?
+    calculation: $15 / ($0.09 - $0.03) = 250 overage validations
+    threshold: 250 overage validations per month beyond the Developer plan included 100
+  - description: At what monthly validation volume does upgrading from Small Business ($15/month, $0.03/validation overage after 500) to Enterprise ($150/month, $0.01/validation overage after 15000) become cost-effective?
+    calculation: ($150 - $15) / ($0.03 - $0.01) = 6750 overage validations
+    threshold: 6750 overage validations per month beyond the Small Business plan included 500

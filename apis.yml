@@ -1,0 +1,73 @@
+aid: vatstack
+name: Vatstack
+description: VAT number validation and EU tax rates REST API for validating European business VAT IDs via VIES and accessing current VAT rates for all EU member states. Vatstack provides automated VAT compliance for digital businesses including real-time VAT number validation, EU GST rate synchronization, price quotation engine, and automated VAT reporting for EC Sales List and VAT OSS requirements.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/vatstack/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - VAT
+  - Tax
+  - Validation
+  - EU
+  - Europe
+  - Compliance
+  - Finance
+  - Business
+apis:
+  - aid: vatstack:vatstack-api
+    name: Vatstack API
+    description: REST API for validating European business VAT IDs via VIES, accessing current VAT rates for all 27 EU member states, calculating price quotes with VAT rules, and storing transaction records for compliance reporting.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://vatstack.com/docs
+    baseURL: https://api.vatstack.com/v1
+    tags:
+      - VAT
+      - Tax
+      - Validation
+      - EU
+      - Rates
+      - Compliance
+    properties:
+      - type: Documentation
+        url: https://vatstack.com/docs
+      - type: OpenAPI
+        url: https://github.com/vatstack/openapi
+      - type: Authentication
+        url: https://vatstack.com/docs/authentication
+      - type: Pricing
+        url: https://vatstack.com/pricing
+      - type: Plans
+        url: plans/vatstack-plans-pricing.yml
+      - type: RateLimits
+        url: rate-limits/vatstack-rate-limits.yml
+      - type: FinOps
+        url: finops/vatstack-finops.yml
+    contact:
+      - FN: Vatstack Support
+        email: support@vatstack.com
+common:
+  - type: Website
+    url: https://vatstack.com
+  - type: Documentation
+    url: https://vatstack.com/docs
+  - type: GitHubOrg
+    url: https://github.com/vatstack
+  - type: Blog
+    url: https://vatstack.com/articles
+  - type: Pricing
+    url: https://vatstack.com/pricing
+  - type: StatusPage
+    url: https://status.vatstack.com
+  - type: X
+    url: https://x.com/vatstack
+  - type: Plans
+    url: plans/vatstack-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/vatstack-rate-limits.yml
+  - type: FinOps
+    url: finops/vatstack-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

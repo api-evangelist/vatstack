@@ -1,0 +1,64 @@
+name: Vatstack Plans and Pricing
+description: Pricing plans for Vatstack VAT validation and EU tax rates API service covering VAT number validation, tax rate lookups, price quotes, and compliance record storage.
+url: https://vatstack.com/pricing
+plans:
+  - name: Developer
+    description: Free tier for testing and development with unlimited dummy validations and API access to all endpoints.
+    price: 0
+    currency: USD
+    interval: month
+    features:
+      - Unlimited VAT rate calculations
+      - 100 included VAT validations per month
+      - 20 included VAT sales records per month
+      - Unlimited dummy validations for testing
+      - Unlimited dummy supplies for testing
+      - Unique developer API access keys (public and secret)
+      - MaxMind GeoIP2 geolocation
+      - 3-day cached quote history
+      - Full EU rates list (27 countries)
+      - Rates for digital products
+    limits:
+      validations_included: 100
+      supplies_included: 20
+      validations_overage_per_unit: 0.09
+      supplies_overage_per_unit: 0.45
+  - name: Small Business
+    description: Entry-level paid plan for small businesses needing regular VAT validation and compliance features.
+    price: 15
+    currency: USD
+    interval: month
+    features:
+      - All Developer plan features
+      - 500 included validations per month
+      - 100 included sales records per month
+      - Official business records verification
+      - Multiregional VAT number checks
+      - CSV import/export capability
+      - Unlimited bulk validations
+      - Evidence for validation and place of supply
+    limits:
+      validations_included: 500
+      supplies_included: 100
+      validations_overage_per_unit: 0.03
+      supplies_overage_per_unit: 0.15
+  - name: Enterprise
+    description: High-volume plan for enterprises requiring SLA guarantees, webhooks, and advanced compliance automation.
+    price: 150
+    currency: USD
+    interval: month
+    features:
+      - All Small Business plan features
+      - 15000 included validations per month
+      - 3000 included sales records per month
+      - 99.95% service level agreement (SLA)
+      - Event webhooks for validation completion
+      - EU data center region option
+      - EC Sales List automation
+      - VAT OSS automation
+      - Synchronized invoices
+    limits:
+      validations_included: 15000
+      supplies_included: 3000
+      validations_overage_per_unit: 0.01
+      supplies_overage_per_unit: 0.05

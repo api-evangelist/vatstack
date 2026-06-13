@@ -1,0 +1,67 @@
+name: Vatstack Rate Limits
+description: Rate limiting and quota information for the Vatstack VAT validation and EU tax rates API. Vatstack uses a consumption-based model where monthly quotas are defined per plan tier, with overage billing applied when limits are exceeded.
+url: https://vatstack.com/docs
+limits:
+  - name: Validations Monthly Quota - Developer
+    description: Monthly included VAT number validations for Developer (free) plan before overage charges apply.
+    plan: Developer
+    type: monthly_quota
+    unit: validations
+    quota: 100
+    overage_rate: 0.09
+    overage_unit: per validation
+  - name: Sales Records Monthly Quota - Developer
+    description: Monthly included VAT sales supply records for Developer (free) plan before overage charges apply.
+    plan: Developer
+    type: monthly_quota
+    unit: supplies
+    quota: 20
+    overage_rate: 0.45
+    overage_unit: per supply record
+  - name: Validations Monthly Quota - Small Business
+    description: Monthly included VAT number validations for Small Business plan before overage charges apply.
+    plan: Small Business
+    type: monthly_quota
+    unit: validations
+    quota: 500
+    overage_rate: 0.03
+    overage_unit: per validation
+  - name: Sales Records Monthly Quota - Small Business
+    description: Monthly included VAT sales supply records for Small Business plan before overage charges apply.
+    plan: Small Business
+    type: monthly_quota
+    unit: supplies
+    quota: 100
+    overage_rate: 0.15
+    overage_unit: per supply record
+  - name: Validations Monthly Quota - Enterprise
+    description: Monthly included VAT number validations for Enterprise plan before overage charges apply.
+    plan: Enterprise
+    type: monthly_quota
+    unit: validations
+    quota: 15000
+    overage_rate: 0.01
+    overage_unit: per validation
+  - name: Sales Records Monthly Quota - Enterprise
+    description: Monthly included VAT sales supply records for Enterprise plan before overage charges apply.
+    plan: Enterprise
+    type: monthly_quota
+    unit: supplies
+    quota: 3000
+    overage_rate: 0.05
+    overage_unit: per supply record
+  - name: Pagination Limit
+    description: Maximum number of records returned per page when listing resources such as validations, supplies, quotes, and rates.
+    type: request_parameter
+    unit: records_per_page
+    minimum: 1
+    maximum: 100
+    default: 20
+  - name: Asynchronous Retry
+    description: When a government VIES service is unavailable, validation requests are queued for asynchronous retry. Webhook notifications are sent upon completion. This mechanism prevents hitting hard limits due to upstream service outages.
+    type: behavior
+    notes: HTTP 202 response indicates accepted but pending; webhook fires on completion
+notes:
+  - Vatstack does not publicly document a per-second or per-minute rate limit on API requests. Quota enforcement is primarily usage-based (monthly caps per plan tier).
+  - Dummy validations and dummy supplies on the Developer plan are unlimited and do not count toward monthly quotas. These use test VAT numbers and return simulated responses for development purposes.
+  - Authentication uses X-API-KEY header with either a public key (pk_live_*) or secret key (sk_live_*) depending on the endpoint.
