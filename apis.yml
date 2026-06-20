@@ -1,7 +1,7 @@
 aid: vatstack
 name: Vatstack
 description: VAT number validation and EU tax rates REST API for validating European business VAT IDs via VIES and accessing current VAT rates for all EU member states. Vatstack provides automated VAT compliance for digital businesses including real-time VAT number validation, EU GST rate synchronization, price quotation engine, and automated VAT reporting for EC Sales List and VAT OSS requirements.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/vatstack/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -19,7 +19,7 @@ apis:
   - aid: vatstack:vatstack-api
     name: Vatstack API
     description: REST API for validating European business VAT IDs via VIES, accessing current VAT rates for all 27 EU member states, calculating price quotes with VAT rules, and storing transaction records for compliance reporting.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://vatstack.com/docs
     baseURL: https://api.vatstack.com/v1
     tags:
