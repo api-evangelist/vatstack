@@ -48,6 +48,12 @@ apis:
       - FN: Vatstack Support
         email: support@vatstack.com
 common:
+  - type: VulnerabilityDisclosure
+    url: security/vatstack-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/vatstack-domain-security.yml
+  - type: Authentication
+    url: authentication/vatstack-authentication.yml
   - type: Website
     url: https://vatstack.com
   - type: Documentation
