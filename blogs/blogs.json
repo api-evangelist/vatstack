@@ -2,13 +2,14 @@
   "repo": "vatstack",
   "feeds": [
     {
-      "source": "https://vatstack.com/articles",
-      "feed_url": "",
+      "source": "https://github.com/vatstack",
+      "feed_url": "https://github.com/vatstack",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
   "post_count": 20,
-  "fetched": "2026-06-27T13:19:38Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "agent_pulled": "2026-06-27"
 }
