@@ -48,6 +48,8 @@ apis:
       - FN: Vatstack Support
         email: support@vatstack.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/vatstack-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/vatstack-vulnerability-disclosure.yml
   - type: DomainSecurity
