@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: Vatstack API Specification Batches Hits API
+  description: A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
+  contact:
+    email: team@vatstack.com
+  version: 1.3.0
+servers:
+- url: https://api.vatstack.com/{basePath}
+  description: Production API server.
+  variables:
+    basePath:
+      default: v1
+tags:
+- name: Hits
+paths:
+  /hits:
+    get:
+      operationId: getAllHits
+      summary: This endpoint can be useful if you want to perform a quick check against your hits count before initiating an API request.
+      responses:
+        '200':
+          description: Hits successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/hit'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+      security:
+      - publicKey: []
+        secretKey: []
+      tags:
+      - Hits
+components:
+  schemas:
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
+    hit:
+      type: object
+      description: Retrieve the number of hits you have used for the running month and the total capacity allocated to your current subscription plan.
+      properties:
+        supplies:
+          type: object
+          properties:
+            capacity:
+              type: integer
+              description: Included supplies in the plan you’re subscribed to.
+              format: int32
+            used:
+              type: integer
+              description: Supplies created during the running month. Additional requests beyond `capacity` will be charged according to the plan you’re subscribed to.
+              format: int32
+        validations:
+          type: object
+          properties:
+            capacity:
+              type: integer
+              description: Included validations in the plan you’re subscribed to.
+              format: int32
+            used:
+              type: integer
+              description: Validations created during the running month. Additional requests beyond `capacity` will be charged according to the plan you’re subscribed to.
+              format: int32
+  securitySchemes:
+    publicKey:
+      type: apiKey
+      name: X-API-KEY
+      in: header
+    secretKey:
+      type: apiKey
+      name: X-API-KEY
+      in: header
+externalDocs:
+  description: Vatstack API Reference
+  url: https://vatstack.com/docs
