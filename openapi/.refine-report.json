@@ -1,0 +1,26 @@
+{
+  "provider": "vatstack",
+  "sources": [
+    "vatstack-batches-api-openapi.yml",
+    "vatstack-evidences-api-openapi.yml",
+    "vatstack-hits-api-openapi.yml",
+    "vatstack-quotes-api-openapi.yml",
+    "vatstack-rates-api-openapi.yml",
+    "vatstack-supplies-api-openapi.yml",
+    "vatstack-validations-api-openapi.yml"
+  ],
+  "outputs": [
+    "vatstack-batches-api-openapi.yml",
+    "vatstack-evidences-api-openapi.yml",
+    "vatstack-hits-api-openapi.yml",
+    "vatstack-quotes-api-openapi.yml",
+    "vatstack-rates-api-openapi.yml",
+    "vatstack-supplies-api-openapi.yml",
+    "vatstack-validations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
