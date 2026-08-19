@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vatstack API Specification Batches Validations API",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Validations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves all validation objects in order of creation, with the most recent appearing highest.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/validations",
+            "params": [
+              {
+                "name": "batch",
+                "value": "",
+                "type": "query",
+                "description": "Show only objects that belong to a batch with the given identifier."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Integer for the current page."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "The VAT number you want to search in the `query` field of your records."
+              },
+              {
+                "name": "requested_since",
+                "value": "",
+                "type": "query",
+                "description": "Show only objects where the `requested` date is this date or later. Format `YYYY-MM-DD`."
+              },
+              {
+                "name": "requested_until",
+                "value": "",
+                "type": "query",
+                "description": "Show only objects where the `requested` date is this date or earlier. Format `YYYY-MM-DD`."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Show only objects of specified type field."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves all validation objects in order of creation, with the most recent appearing highest."
+        },
+        {
+          "info": {
+            "name": "Creates a validation object.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vatstack.com/{basePath}/validations",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "type",
+                  "value": ""
+                },
+                {
+                  "name": "query",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates a validation object."
+        },
+        {
+          "info": {
+            "name": "Retrieves a validation object.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/validations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves a validation object."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

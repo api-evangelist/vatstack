@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vatstack API Specification Batches Evidences API",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Evidences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves all evidence objects in order of creation, with the latest appearing highest.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/evidences",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Integer for the current page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves all evidence objects in order of creation, with the latest appearing highest."
+        },
+        {
+          "info": {
+            "name": "Creates an evidence object.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vatstack.com/{basePath}/evidences",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "bank_address",
+                  "value": ""
+                },
+                {
+                  "name": "billing_address",
+                  "value": ""
+                },
+                {
+                  "name": "ip_address",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates an evidence object."
+        },
+        {
+          "info": {
+            "name": "Retrieves an evidence object by the {id} path parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/evidences/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves an evidence object by the {id} path parameter."
+        },
+        {
+          "info": {
+            "name": "Updates an evidence object by the {id} path parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.vatstack.com/{basePath}/evidences/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "bank_address",
+                  "value": ""
+                },
+                {
+                  "name": "billing_address",
+                  "value": ""
+                },
+                {
+                  "name": "ip_address",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates an evidence object by the {id} path parameter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

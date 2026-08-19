@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vatstack API Specification Batches Rates API",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves all VAT rate objects, including standard VAT rates and VAT rates for digital products.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/rates",
+            "params": [
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by a 2-letter ISO country code."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+              },
+              {
+                "name": "member_state",
+                "value": "",
+                "type": "query",
+                "description": "Boolean to filter results by EU Member State."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Integer for the current page."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves all VAT rate objects, including standard VAT rates and VAT rates for digital products."
+        },
+        {
+          "info": {
+            "name": "Retrieves a geolocated VAT rate by IP address.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/rates/geolocate",
+            "params": [
+              {
+                "name": "ip_address",
+                "value": "",
+                "type": "query",
+                "description": "IPv4 or IPv6 address to geolocate. If none is provided, the IP address of the request is used."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves a geolocated VAT rate by IP address."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

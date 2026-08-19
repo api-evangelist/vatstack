@@ -1,0 +1,1200 @@
+{
+  "item": [
+    {
+      "id": "5251c1b9-1e06-49e4-aacc-1b754bf71738",
+      "name": "Batches",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "493d530f-7da8-44a4-90ce-cd7da25710af",
+          "name": "Creates a batch object.",
+          "request": {
+            "name": "Creates a batch object.",
+            "description": {},
+            "url": {
+              "path": [
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) Descriptive name of the batch object. Give it any name you like to serve for your reference."
+                },
+                {
+                  "disabled": false,
+                  "key": "queries",
+                  "value": "<string>",
+                  "description": "Array of VAT numbers to be queried. Should be an array of strings."
+                },
+                {
+                  "disabled": false,
+                  "key": "queries",
+                  "value": "<string>",
+                  "description": "Array of VAT numbers to be queried. Should be an array of strings."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b977985d-d1d7-4617-bd41-4665b405ff03",
+              "name": "Batch object successfully created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Descriptive name of the batch object. Give it any name you like to serve for your reference.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be queried. Should be an array of strings.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be queried. Should be an array of strings.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"created\": \"2000-05-25T16:47:50.945Z\",\n  \"id\": \"c4ae1ab4-98cc-1956-c263-58a93b0efbb1\",\n  \"queries\": [\n    \"string\",\n    \"string\"\n  ],\n  \"queries_ignored\": [\n    \"string\",\n    \"string\"\n  ],\n  \"scheduled\": \"2025-10-09T20:40:46.204Z\",\n  \"succeeded_count\": 7215,\n  \"updated\": \"1977-01-13T16:31:40.842Z\",\n  \"validations\": [\n    {\n      \"query\": \"string\",\n      \"active\": null,\n      \"code\": \"string\",\n      \"company_address\": null,\n      \"company_name\": null,\n      \"company_type\": null,\n      \"consultation_number\": null,\n      \"country_code\": \"st\",\n      \"created\": \"1969-12-20T22:26:52.897Z\",\n      \"id\": \"af8ad665-d9e1-98ac-e307-849410149d6e\",\n      \"requested\": \"1963-10-29T03:08:48.906Z\",\n      \"type\": \"eu_vat\",\n      \"updated\": \"1975-05-08T22:34:26.713Z\",\n      \"valid\": null,\n      \"valid_format\": false,\n      \"vat_number\": \"string\"\n    },\n    {\n      \"query\": \"string\",\n      \"active\": null,\n      \"code\": \"string\",\n      \"company_address\": null,\n      \"company_name\": null,\n      \"company_type\": null,\n      \"consultation_number\": null,\n      \"country_code\": \"st\",\n      \"created\": \"1969-09-08T16:28:32.658Z\",\n      \"id\": \"46cf3e50-1a3a-9646-f035-dfe8950e9967\",\n      \"requested\": \"1960-09-01T12:41:54.749Z\",\n      \"type\": \"no_vat\",\n      \"updated\": \"2017-06-20T12:47:03.611Z\",\n      \"valid\": null,\n      \"valid_format\": false,\n      \"vat_number\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08daf6b3-b656-4f42-ab25-97c1184bc965",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Descriptive name of the batch object. Give it any name you like to serve for your reference.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be queried. Should be an array of strings.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be queried. Should be an array of strings.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9eb0b787-ffc4-439a-b513-385804fe4cd2",
+          "name": "Retrieves all batch objects in order of creation, with the latest appearing highest.",
+          "request": {
+            "name": "Retrieves all batch objects in order of creation, with the latest appearing highest.",
+            "description": {},
+            "url": {
+              "path": [
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Integer for the current page."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Show only objects with the given `status`."
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "73420281-045a-403d-a089-13d23845a343",
+              "name": "Batch objects successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"has_more\": true,\n  \"batches_count\": 5885,\n  \"batches\": [\n    {\n      \"name\": \"string\",\n      \"created\": \"1969-06-03T11:02:49.917Z\",\n      \"id\": \"2e6e4ac3-e7ca-a49b-6e5d-df7f369ae104\",\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ],\n      \"queries_ignored\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scheduled\": \"2008-07-07T23:59:49.707Z\",\n      \"succeeded_count\": 4087,\n      \"updated\": \"1992-01-27T10:52:13.516Z\",\n      \"validations\": [\n        {\n          \"query\": \"string\",\n          \"active\": null,\n          \"code\": \"string\",\n          \"company_address\": null,\n          \"company_name\": null,\n          \"company_type\": null,\n          \"consultation_number\": null,\n          \"country_code\": \"st\",\n          \"created\": \"1961-11-10T00:09:51.435Z\",\n          \"id\": \"05c0e95c-3c1f-68e9-f65b-f1b958e89f7c\",\n          \"requested\": \"1992-12-24T18:31:39.622Z\",\n          \"type\": \"no_vat\",\n          \"updated\": \"2023-03-07T01:24:26.154Z\",\n          \"valid\": null,\n          \"valid_format\": false,\n          \"vat_number\": \"string\"\n        },\n        {\n          \"query\": \"string\",\n          \"active\": null,\n          \"code\": \"string\",\n          \"company_address\": null,\n          \"company_name\": null,\n          \"company_type\": null,\n          \"consultation_number\": null,\n          \"country_code\": \"st\",\n          \"created\": \"1979-10-13T12:10:26.718Z\",\n          \"id\": \"e4863e78-16e4-c54f-b973-36e150d2cb00\",\n          \"requested\": \"1970-04-24T06:44:15.769Z\",\n          \"type\": \"no_vat\",\n          \"updated\": \"1958-07-21T21:23:08.496Z\",\n          \"valid\": null,\n          \"valid_format\": true,\n          \"vat_number\": \"string\"\n        }\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"created\": \"1991-09-14T06:04:48.178Z\",\n      \"id\": \"6d4424e0-6b60-4312-09a3-5577b8812765\",\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ],\n      \"queries_ignored\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scheduled\": \"1988-07-21T10:34:41.242Z\",\n      \"succeeded_count\": 1654,\n      \"updated\": \"1946-10-30T18:47:44.310Z\",\n      \"validations\": [\n        {\n          \"query\": \"string\",\n          \"active\": null,\n          \"code\": \"string\",\n          \"company_address\": null,\n          \"company_name\": null,\n          \"company_type\": null,\n          \"consultation_number\": null,\n          \"country_code\": \"st\",\n          \"created\": \"1957-02-14T10:09:42.827Z\",\n          \"id\": \"023842b2-cb6e-dc4a-d843-6b4430407993\",\n          \"requested\": \"1953-01-17T04:26:22.881Z\",\n          \"type\": \"ch_vat\",\n          \"updated\": \"2008-11-18T05:04:32.106Z\",\n          \"valid\": null,\n          \"valid_format\": true,\n          \"vat_number\": \"string\"\n        },\n        {\n          \"query\": \"string\",\n          \"active\": null,\n          \"code\": \"string\",\n          \"company_address\": null,\n          \"company_name\": null,\n          \"company_type\": null,\n          \"consultation_number\": null,\n          \"country_code\": \"st\",\n          \"created\": \"1984-08-07T16:32:11.601Z\",\n          \"id\": \"e92e3273-c39e-7500-8cb7-2aa2cda75064\",\n          \"requested\": \"2018-08-01T00:05:35.223Z\",\n          \"type\": \"no_vat\",\n          \"updated\": \"1984-01-03T19:53:17.263Z\",\n          \"valid\": null,\n          \"valid_format\": false,\n          \"vat_number\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de73c2d3-85c2-4688-b637-880fe78625b7",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ca377ec-c5ff-44bf-9e8a-fa5269aace4d",
+          "name": "Retrieves a batch object by the {id} path parameter.",
+          "request": {
+            "name": "Retrieves a batch object by the {id} path parameter.",
+            "description": {},
+            "url": {
+              "path": [
+                "batches",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8112d34d-411a-4cb6-8cc3-0d67dec479d3",
+              "name": "Batch object successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"created\": \"1949-01-17T21:53:01.286Z\",\n  \"id\": \"d3271ec8-26e5-1f19-bd5b-4fffb757c618\",\n  \"queries\": [\n    \"string\",\n    \"string\"\n  ],\n  \"queries_ignored\": [\n    \"string\",\n    \"string\"\n  ],\n  \"scheduled\": \"2000-01-20T03:18:01.242Z\",\n  \"succeeded_count\": 8189,\n  \"updated\": \"2010-12-19T20:40:13.929Z\",\n  \"validations\": [\n    {\n      \"query\": \"string\",\n      \"active\": null,\n      \"code\": \"string\",\n      \"company_address\": null,\n      \"company_name\": null,\n      \"company_type\": null,\n      \"consultation_number\": null,\n      \"country_code\": \"st\",\n      \"created\": \"1988-08-04T19:58:40.724Z\",\n      \"id\": \"8481ac07-38cf-8c0e-4ac0-a9c528c24f95\",\n      \"requested\": \"1956-12-05T14:54:38.958Z\",\n      \"type\": \"au_gst\",\n      \"updated\": \"1974-01-19T10:42:56.139Z\",\n      \"valid\": null,\n      \"valid_format\": false,\n      \"vat_number\": \"string\"\n    },\n    {\n      \"query\": \"string\",\n      \"active\": null,\n      \"code\": \"string\",\n      \"company_address\": null,\n      \"company_name\": null,\n      \"company_type\": null,\n      \"consultation_number\": null,\n      \"country_code\": \"st\",\n      \"created\": \"2005-11-26T17:30:56.682Z\",\n      \"id\": \"c0367eab-6a14-02b3-e240-80f8656a0801\",\n      \"requested\": \"2022-11-15T23:27:39.197Z\",\n      \"type\": \"sg_gst\",\n      \"updated\": \"2014-03-14T12:25:11.006Z\",\n      \"valid\": null,\n      \"valid_format\": true,\n      \"vat_number\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f842d3ec-adac-4479-98de-a3cb002f993f",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34939035-d599-4a00-9f1a-76441fd7102f",
+          "name": "Updates a batch object by the {id} path parameter.",
+          "request": {
+            "name": "Updates a batch object by the {id} path parameter.",
+            "description": {},
+            "url": {
+              "path": [
+                "batches",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "mode",
+                  "value": "<string>",
+                  "description": "Either `append` to append an array of queries to the existing array of queries, or `replace` to empty the existing array of queries prior to adding. Defaults to `append`."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Descriptive name of the batch object. Give it any name you like to serve for your reference."
+                },
+                {
+                  "disabled": false,
+                  "key": "queries",
+                  "value": "<string>",
+                  "description": "Array of VAT numbers to be added while considering the `mode`."
+                },
+                {
+                  "disabled": false,
+                  "key": "queries",
+                  "value": "<string>",
+                  "description": "Array of VAT numbers to be added while considering the `mode`."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Set it to `scheduled` once you want to schedule the validation process with the queries provided. It’s possible to add queries and change the status in one go."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "711ea81c-1fa4-4090-b83b-c0ea3c0b93b5",
+              "name": "Batch object successfully updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Either `append` to append an array of queries to the existing array of queries, or `replace` to empty the existing array of queries prior to adding. Defaults to `append`.",
+                        "type": "text/plain"
+                      },
+                      "key": "mode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Descriptive name of the batch object. Give it any name you like to serve for your reference.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be added while considering the `mode`.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be added while considering the `mode`.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Set it to `scheduled` once you want to schedule the validation process with the queries provided. It’s possible to add queries and change the status in one go.",
+                        "type": "text/plain"
+                      },
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"created\": \"1949-01-17T21:53:01.286Z\",\n  \"id\": \"d3271ec8-26e5-1f19-bd5b-4fffb757c618\",\n  \"queries\": [\n    \"string\",\n    \"string\"\n  ],\n  \"queries_ignored\": [\n    \"string\",\n    \"string\"\n  ],\n  \"scheduled\": \"2000-01-20T03:18:01.242Z\",\n  \"succeeded_count\": 8189,\n  \"updated\": \"2010-12-19T20:40:13.929Z\",\n  \"validations\": [\n    {\n      \"query\": \"string\",\n      \"active\": null,\n      \"code\": \"string\",\n      \"company_address\": null,\n      \"company_name\": null,\n      \"company_type\": null,\n      \"consultation_number\": null,\n      \"country_code\": \"st\",\n      \"created\": \"1988-08-04T19:58:40.724Z\",\n      \"id\": \"8481ac07-38cf-8c0e-4ac0-a9c528c24f95\",\n      \"requested\": \"1956-12-05T14:54:38.958Z\",\n      \"type\": \"au_gst\",\n      \"updated\": \"1974-01-19T10:42:56.139Z\",\n      \"valid\": null,\n      \"valid_format\": false,\n      \"vat_number\": \"string\"\n    },\n    {\n      \"query\": \"string\",\n      \"active\": null,\n      \"code\": \"string\",\n      \"company_address\": null,\n      \"company_name\": null,\n      \"company_type\": null,\n      \"consultation_number\": null,\n      \"country_code\": \"st\",\n      \"created\": \"2005-11-26T17:30:56.682Z\",\n      \"id\": \"c0367eab-6a14-02b3-e240-80f8656a0801\",\n      \"requested\": \"2022-11-15T23:27:39.197Z\",\n      \"type\": \"sg_gst\",\n      \"updated\": \"2014-03-14T12:25:11.006Z\",\n      \"valid\": null,\n      \"valid_format\": true,\n      \"vat_number\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "538d9957-b3d8-41c8-832c-8d9279f32388",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Either `append` to append an array of queries to the existing array of queries, or `replace` to empty the existing array of queries prior to adding. Defaults to `append`.",
+                        "type": "text/plain"
+                      },
+                      "key": "mode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Descriptive name of the batch object. Give it any name you like to serve for your reference.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be added while considering the `mode`.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Array of VAT numbers to be added while considering the `mode`.",
+                        "type": "text/plain"
+                      },
+                      "key": "queries",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Set it to `scheduled` once you want to schedule the validation process with the queries provided. It’s possible to add queries and change the status in one go.",
+                        "type": "text/plain"
+                      },
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d667ba21-f74e-4268-b284-151eb7ed84c9",
+          "name": "Deletes a batch object by the {id} path parameter.",
+          "request": {
+            "name": "Deletes a batch object by the {id} path parameter.",
+            "description": {},
+            "url": {
+              "path": [
+                "batches",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5e7a3b12-c949-414a-9f73-413393106b47",
+              "name": "Batch object successfully deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e1959c0-23fe-4289-8246-0f1f89d42071",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "v1",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "https://api.vatstack.com/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2c873594-56d4-4ea4-8d7a-9b2591b8b86a",
+    "name": "Vatstack API Specification Batches API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.\n\nContact Support:\n Email: team@vatstack.com",
+      "type": "text/plain"
+    }
+  }
+}

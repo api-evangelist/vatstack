@@ -1,0 +1,178 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vatstack API Specification Batches API",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Batches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves all batch objects in order of creation, with the latest appearing highest.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/batches",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Integer for the current page."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Show only objects with the given `status`."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves all batch objects in order of creation, with the latest appearing highest."
+        },
+        {
+          "info": {
+            "name": "Creates a batch object.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.vatstack.com/{basePath}/batches",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "queries",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates a batch object."
+        },
+        {
+          "info": {
+            "name": "Retrieves a batch object by the {id} path parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.vatstack.com/{basePath}/batches/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves a batch object by the {id} path parameter."
+        },
+        {
+          "info": {
+            "name": "Updates a batch object by the {id} path parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.vatstack.com/{basePath}/batches/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "mode",
+                  "value": ""
+                },
+                {
+                  "name": "name",
+                  "value": ""
+                },
+                {
+                  "name": "queries",
+                  "value": ""
+                },
+                {
+                  "name": "status",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates a batch object by the {id} path parameter."
+        },
+        {
+          "info": {
+            "name": "Deletes a batch object by the {id} path parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.vatstack.com/{basePath}/batches/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Deletes a batch object by the {id} path parameter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

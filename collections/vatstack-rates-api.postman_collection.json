@@ -1,0 +1,448 @@
+{
+  "item": [
+    {
+      "id": "34e70059-1e56-4b3a-a308-9de1eb82f830",
+      "name": "Rates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9276c05c-4ad0-4eb1-993e-4dc184b59982",
+          "name": "Retrieves all VAT rate objects, including standard VAT rates and VAT rates for digital products.",
+          "request": {
+            "name": "Retrieves all VAT rate objects, including standard VAT rates and VAT rates for digital products.",
+            "description": {},
+            "url": {
+              "path": [
+                "rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "Filter results by a 2-letter ISO country code."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+                },
+                {
+                  "disabled": false,
+                  "key": "member_state",
+                  "value": "<boolean>",
+                  "description": "Boolean to filter results by EU Member State."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Integer for the current page."
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1cc22bf1-f5f8-4a50-a2d4-4cea943c109c",
+              "name": "Rate objects successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "member_state",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"has_more\": false,\n  \"rates_count\": 3213,\n  \"rates\": [\n    {\n      \"abbreviation\": \"string\",\n      \"categories\": {\n        \"audiobook\": 41.54663056018859,\n        \"broadcasting\": 6506.562825698674,\n        \"ebook\": 7034.067285474314,\n        \"eperiodical\": 3897.5977725250154,\n        \"eservice\": 627.2739251098914,\n        \"telecommunication\": 5374.1952581750365\n      },\n      \"country_code\": \"st\",\n      \"country_name\": \"string\",\n      \"currency\": \"str\",\n      \"local_name\": \"string\",\n      \"member_state\": false,\n      \"reduced_rates\": [\n        1116.6464287959589,\n        4427.060028207744\n      ],\n      \"standard_rate\": 583.4327860991051,\n      \"vat_abbreviation\": \"string\",\n      \"vat_local_name\": \"string\"\n    },\n    {\n      \"abbreviation\": \"string\",\n      \"categories\": {\n        \"audiobook\": 2055.661317148013,\n        \"broadcasting\": 1042.595170991154,\n        \"ebook\": 1239.1656263638395,\n        \"eperiodical\": 9197.994478847471,\n        \"eservice\": 8696.604853688603,\n        \"telecommunication\": 3370.2579665209996\n      },\n      \"country_code\": \"st\",\n      \"country_name\": \"string\",\n      \"currency\": \"str\",\n      \"local_name\": \"string\",\n      \"member_state\": false,\n      \"reduced_rates\": [\n        4622.447808469171,\n        7939.549855647495\n      ],\n      \"standard_rate\": 9772.853491042135,\n      \"vat_abbreviation\": \"string\",\n      \"vat_local_name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c813d023-eb9f-43d7-9739-c7a8a0514f5f",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "member_state",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffa84d37-77a1-4c0e-9809-45a3d09d1391",
+          "name": "Retrieves a geolocated VAT rate by IP address.",
+          "request": {
+            "name": "Retrieves a geolocated VAT rate by IP address.",
+            "description": {},
+            "url": {
+              "path": [
+                "rates",
+                "geolocate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ip_address",
+                  "value": "<string>",
+                  "description": "IPv4 or IPv6 address to geolocate. If none is provided, the IP address of the request is used."
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "245a2022-623e-418f-966a-8f746d18b89e",
+              "name": "Rate object successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rates",
+                    "geolocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip_address",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"categories\": {\n    \"audiobook\": 9725.274603858641,\n    \"broadcasting\": 1803.767486213057,\n    \"ebook\": 3994.487209978972,\n    \"eperiodical\": 3929.5566717817655,\n    \"eservice\": 3976.4258026593357,\n    \"telecommunication\": 7606.817599683253\n  },\n  \"country_code\": \"st\",\n  \"country_name\": \"string\",\n  \"currency\": \"str\",\n  \"local_name\": \"string\",\n  \"member_state\": false,\n  \"reduced_rates\": [\n    744.607243282518,\n    5959.244229085411\n  ],\n  \"standard_rate\": 5204.923667818223,\n  \"vat_abbreviation\": \"string\",\n  \"vat_local_name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "130399b4-2a39-4f80-be15-a59f56c33d58",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rates",
+                    "geolocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip_address",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "v1",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "https://api.vatstack.com/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f5c4858b-6177-4d69-9251-5084f2a77a15",
+    "name": "Vatstack API Specification Batches Rates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.\n\nContact Support:\n Email: team@vatstack.com",
+      "type": "text/plain"
+    }
+  }
+}

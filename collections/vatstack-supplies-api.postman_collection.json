@@ -1,0 +1,1638 @@
+{
+  "item": [
+    {
+      "id": "229e5b88-a155-40aa-bbb1-75145dd89ad9",
+      "name": "Supplies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b1f90a2d-9c89-4124-9a2b-debef7720df1",
+          "name": "Creates a supply object.",
+          "request": {
+            "name": "Creates a supply object.",
+            "description": {},
+            "url": {
+              "path": [
+                "supplies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<integer>",
+                  "description": "(Required) Amount in **cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues."
+                },
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "(Required) 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`."
+                },
+                {
+                  "disabled": false,
+                  "key": "invoice_number",
+                  "value": "<string>",
+                  "description": "(Required) A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering."
+                },
+                {
+                  "disabled": false,
+                  "key": "issued",
+                  "value": "<string>",
+                  "description": "(Required) ISO date at which the invoice was issued to the customer."
+                },
+                {
+                  "disabled": false,
+                  "key": "amount_refunded",
+                  "value": "<integer>",
+                  "description": "Amount in cents refunded back to the customer."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "A custom string to describe the supplied item."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<uuid>",
+                  "description": "Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "A custom string for the name of the customer."
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "A custom string for additional notes."
+                },
+                {
+                  "disabled": false,
+                  "key": "validation",
+                  "value": "<uuid>",
+                  "description": "Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its valid value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating."
+                },
+                {
+                  "disabled": false,
+                  "key": "inclusive",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rate",
+                  "value": "<double>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "edff4f07-9dfd-48e0-b045-7cac8aae0126",
+              "name": "Supply object successfully created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Amount in **cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`.",
+                        "type": "text/plain"
+                      },
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering.",
+                        "type": "text/plain"
+                      },
+                      "key": "invoice_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ISO date at which the invoice was issued to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "issued",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount in cents refunded back to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount_refunded",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency.",
+                        "type": "text/plain"
+                      },
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string to describe the supplied item.",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`.",
+                        "type": "text/plain"
+                      },
+                      "key": "evidence",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for the name of the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for additional notes.",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its valid value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating.",
+                        "type": "text/plain"
+                      },
+                      "key": "validation",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "inclusive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "rate",
+                      "value": "<double>"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amount\": 852,\n  \"country_code\": \"st\",\n  \"currency\": \"str\",\n  \"invoice_number\": \"string\",\n  \"issued\": \"1983-07-19T07:51:21.256Z\",\n  \"amount_refunded\": 7424,\n  \"amount_total\": 7132,\n  \"created\": \"2009-10-03T14:59:45.557Z\",\n  \"description\": \"string\",\n  \"evidence\": {\n    \"bank_address\": {\n      \"country_code\": \"st\",\n      \"name\": \"string\"\n    },\n    \"billing_address\": {\n      \"city\": \"string\",\n      \"country_code\": \"st\",\n      \"line_1\": \"string\",\n      \"line_2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"created\": \"1953-08-05T21:04:11.983Z\",\n    \"ip_address\": {\n      \"label\": \"string\",\n      \"provider\": \"string\",\n      \"city\": \"string\",\n      \"country_code\": \"st\",\n      \"state\": \"string\"\n    },\n    \"id\": \"9f3b8833-53f5-8acc-948e-7c28a0158a17\",\n    \"required_count\": 9601,\n    \"updated\": \"1949-09-10T19:34:07.688Z\"\n  },\n  \"evidence_status\": \"string\",\n  \"id\": \"4b4238da-1c3f-911f-561b-3d467bb40685\",\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"updated\": \"2020-04-23T12:15:16.585Z\",\n  \"validation\": {\n    \"query\": \"string\",\n    \"active\": null,\n    \"code\": \"string\",\n    \"company_address\": null,\n    \"company_name\": null,\n    \"company_type\": null,\n    \"consultation_number\": null,\n    \"country_code\": \"st\",\n    \"created\": \"1992-06-28T17:51:25.368Z\",\n    \"id\": \"1dc0cfc8-400f-2579-65c1-bd799af313e0\",\n    \"requested\": \"2020-03-03T15:34:52.823Z\",\n    \"type\": \"eu_vat\",\n    \"updated\": \"2022-01-10T18:52:21.318Z\",\n    \"valid\": null,\n    \"valid_format\": true,\n    \"vat_number\": \"string\"\n  },\n  \"vat\": {\n    \"amount\": 8627,\n    \"inclusive\": false,\n    \"rate\": 5513.245367982463,\n    \"rate_type\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58062247-d0c3-4542-8a89-0b48fab224cd",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Amount in **cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) 2-letter ISO country code of the place of supply that is relevant for the `vat.rate`.",
+                        "type": "text/plain"
+                      },
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering.",
+                        "type": "text/plain"
+                      },
+                      "key": "invoice_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ISO date at which the invoice was issued to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "issued",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount in cents refunded back to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount_refunded",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency.",
+                        "type": "text/plain"
+                      },
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string to describe the supplied item.",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`.",
+                        "type": "text/plain"
+                      },
+                      "key": "evidence",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for the name of the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for additional notes.",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its valid value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating.",
+                        "type": "text/plain"
+                      },
+                      "key": "validation",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "inclusive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "rate",
+                      "value": "<double>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecd14945-9e71-461d-8952-e156409416bd",
+          "name": "Retrieves all supply objects in order of creation, with the most recent appearing highest.",
+          "request": {
+            "name": "Retrieves all supply objects in order of creation, with the most recent appearing highest.",
+            "description": {},
+            "url": {
+              "path": [
+                "supplies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "The 2-letter ISO country code by which you want to filter your records."
+                },
+                {
+                  "disabled": false,
+                  "key": "issued_since",
+                  "value": "<date>",
+                  "description": "Show only objects where the `issued` date is this date or later. Format `YYYY-MM-DD`."
+                },
+                {
+                  "disabled": false,
+                  "key": "issued_until",
+                  "value": "<date>",
+                  "description": "Show only objects where the `issued` date is this date or earlier. Format `YYYY-MM-DD`."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Show only objects with that customer name."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Integer for the current page."
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3bcb09ac-ca7f-49b0-940b-1043cade48df",
+              "name": "Supply objects successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issued_since",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "issued_until",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"has_more\": true,\n  \"supplies_count\": 9222,\n  \"supplies\": [\n    {\n      \"amount\": 5559,\n      \"country_code\": \"st\",\n      \"currency\": \"str\",\n      \"invoice_number\": \"string\",\n      \"issued\": \"1992-07-31T03:06:41.689Z\",\n      \"amount_refunded\": 9603,\n      \"amount_total\": 4354,\n      \"created\": \"2001-02-11T13:03:52.745Z\",\n      \"description\": \"string\",\n      \"evidence\": {\n        \"bank_address\": {\n          \"country_code\": \"st\",\n          \"name\": \"string\"\n        },\n        \"billing_address\": {\n          \"city\": \"string\",\n          \"country_code\": \"st\",\n          \"line_1\": \"string\",\n          \"line_2\": \"string\",\n          \"postal_code\": \"string\",\n          \"state\": \"string\"\n        },\n        \"created\": \"1991-05-03T18:28:36.841Z\",\n        \"ip_address\": {\n          \"label\": \"string\",\n          \"provider\": \"string\",\n          \"city\": \"string\",\n          \"country_code\": \"st\",\n          \"state\": \"string\"\n        },\n        \"id\": \"3f5269a9-49ca-0259-e8a7-b571724ab2d5\",\n        \"required_count\": 2449,\n        \"updated\": \"1960-07-31T16:17:19.735Z\"\n      },\n      \"evidence_status\": \"string\",\n      \"id\": \"6408d438-6cd1-6970-cfb1-f15c7162d3b0\",\n      \"name\": \"string\",\n      \"notes\": \"string\",\n      \"updated\": \"1980-03-29T10:21:45.685Z\",\n      \"validation\": {\n        \"query\": \"string\",\n        \"active\": null,\n        \"code\": \"string\",\n        \"company_address\": null,\n        \"company_name\": null,\n        \"company_type\": null,\n        \"consultation_number\": null,\n        \"country_code\": \"st\",\n        \"created\": \"1995-02-24T08:05:41.759Z\",\n        \"id\": \"cc1fe5de-5cda-3c4a-c006-f9af3d85502e\",\n        \"requested\": \"2006-12-08T05:36:15.637Z\",\n        \"type\": \"ch_vat\",\n        \"updated\": \"2013-09-11T03:05:44.202Z\",\n        \"valid\": null,\n        \"valid_format\": true,\n        \"vat_number\": \"string\"\n      },\n      \"vat\": {\n        \"amount\": 5300,\n        \"inclusive\": false,\n        \"rate\": 4931.533384035637,\n        \"rate_type\": \"string\"\n      }\n    },\n    {\n      \"amount\": 2512,\n      \"country_code\": \"st\",\n      \"currency\": \"str\",\n      \"invoice_number\": \"string\",\n      \"issued\": \"1966-07-20T07:31:58.944Z\",\n      \"amount_refunded\": 5838,\n      \"amount_total\": 7883,\n      \"created\": \"1959-09-21T10:05:44.393Z\",\n      \"description\": \"string\",\n      \"evidence\": {\n        \"bank_address\": {\n          \"country_code\": \"st\",\n          \"name\": \"string\"\n        },\n        \"billing_address\": {\n          \"city\": \"string\",\n          \"country_code\": \"st\",\n          \"line_1\": \"string\",\n          \"line_2\": \"string\",\n          \"postal_code\": \"string\",\n          \"state\": \"string\"\n        },\n        \"created\": \"1982-01-24T12:48:04.365Z\",\n        \"ip_address\": {\n          \"label\": \"string\",\n          \"provider\": \"string\",\n          \"city\": \"string\",\n          \"country_code\": \"st\",\n          \"state\": \"string\"\n        },\n        \"id\": \"862e2647-6f2b-d024-4ecb-68f71d5f5ca3\",\n        \"required_count\": 7926,\n        \"updated\": \"1974-08-22T07:57:10.822Z\"\n      },\n      \"evidence_status\": \"string\",\n      \"id\": \"e4e76d87-da92-f47c-2341-0a644b6d72be\",\n      \"name\": \"string\",\n      \"notes\": \"string\",\n      \"updated\": \"1952-08-16T11:09:15.122Z\",\n      \"validation\": {\n        \"query\": \"string\",\n        \"active\": null,\n        \"code\": \"string\",\n        \"company_address\": null,\n        \"company_name\": null,\n        \"company_type\": null,\n        \"consultation_number\": null,\n        \"country_code\": \"st\",\n        \"created\": \"1959-09-10T02:44:43.189Z\",\n        \"id\": \"aba1bf00-068e-e74f-0280-a8d42d1a27b0\",\n        \"requested\": \"1978-03-06T01:27:25.773Z\",\n        \"type\": \"eu_oss_vat\",\n        \"updated\": \"1980-04-08T15:48:47.074Z\",\n        \"valid\": null,\n        \"valid_format\": false,\n        \"vat_number\": \"string\"\n      },\n      \"vat\": {\n        \"amount\": 2772,\n        \"inclusive\": false,\n        \"rate\": 612.1110643440131,\n        \"rate_type\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f424038b-e230-4e3e-9130-e5e794296761",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "issued_since",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "issued_until",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19dc0f9a-6902-4631-bba4-9dcbc5d779b1",
+          "name": "Retrieves a supply object.",
+          "request": {
+            "name": "Retrieves a supply object.",
+            "description": {},
+            "url": {
+              "path": [
+                "supplies",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2dfdcb20-e6ce-4185-ba81-00846212f498",
+              "name": "Supply object successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amount\": 852,\n  \"country_code\": \"st\",\n  \"currency\": \"str\",\n  \"invoice_number\": \"string\",\n  \"issued\": \"1983-07-19T07:51:21.256Z\",\n  \"amount_refunded\": 7424,\n  \"amount_total\": 7132,\n  \"created\": \"2009-10-03T14:59:45.557Z\",\n  \"description\": \"string\",\n  \"evidence\": {\n    \"bank_address\": {\n      \"country_code\": \"st\",\n      \"name\": \"string\"\n    },\n    \"billing_address\": {\n      \"city\": \"string\",\n      \"country_code\": \"st\",\n      \"line_1\": \"string\",\n      \"line_2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"created\": \"1953-08-05T21:04:11.983Z\",\n    \"ip_address\": {\n      \"label\": \"string\",\n      \"provider\": \"string\",\n      \"city\": \"string\",\n      \"country_code\": \"st\",\n      \"state\": \"string\"\n    },\n    \"id\": \"9f3b8833-53f5-8acc-948e-7c28a0158a17\",\n    \"required_count\": 9601,\n    \"updated\": \"1949-09-10T19:34:07.688Z\"\n  },\n  \"evidence_status\": \"string\",\n  \"id\": \"4b4238da-1c3f-911f-561b-3d467bb40685\",\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"updated\": \"2020-04-23T12:15:16.585Z\",\n  \"validation\": {\n    \"query\": \"string\",\n    \"active\": null,\n    \"code\": \"string\",\n    \"company_address\": null,\n    \"company_name\": null,\n    \"company_type\": null,\n    \"consultation_number\": null,\n    \"country_code\": \"st\",\n    \"created\": \"1992-06-28T17:51:25.368Z\",\n    \"id\": \"1dc0cfc8-400f-2579-65c1-bd799af313e0\",\n    \"requested\": \"2020-03-03T15:34:52.823Z\",\n    \"type\": \"eu_vat\",\n    \"updated\": \"2022-01-10T18:52:21.318Z\",\n    \"valid\": null,\n    \"valid_format\": true,\n    \"vat_number\": \"string\"\n  },\n  \"vat\": {\n    \"amount\": 8627,\n    \"inclusive\": false,\n    \"rate\": 5513.245367982463,\n    \"rate_type\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9b61c72-67f8-4951-ae06-5557cc2ddb31",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bb5ff30-872a-4737-91a4-74d91a2c633c",
+          "name": "Updates a supply object by the {id} path parameter.",
+          "request": {
+            "name": "Updates a supply object by the {id} path parameter.",
+            "description": {},
+            "url": {
+              "path": [
+                "supplies",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<integer>",
+                  "description": "Amount in **cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues."
+                },
+                {
+                  "disabled": false,
+                  "key": "amount_refunded",
+                  "value": "<integer>",
+                  "description": "Amount in cents refunded back to the customer."
+                },
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "2-letter ISO country code of the place of supply that is relevant for the `vat.rate`."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "A custom string to describe the supplied item."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<uuid>",
+                  "description": "Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`."
+                },
+                {
+                  "disabled": false,
+                  "key": "invoice_number",
+                  "value": "<string>",
+                  "description": "A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering."
+                },
+                {
+                  "disabled": false,
+                  "key": "issued",
+                  "value": "<string>",
+                  "description": "ISO date at which the invoice was issued to the customer."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "A custom string for the name of the customer."
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "A custom string for additional notes."
+                },
+                {
+                  "disabled": false,
+                  "key": "validation",
+                  "value": "<uuid>",
+                  "description": "Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its valid value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating."
+                },
+                {
+                  "disabled": false,
+                  "key": "inclusive",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rate",
+                  "value": "<double>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7064d1b0-ec54-4e49-9493-913836ada63d",
+              "name": "Supply object successfully updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount in **cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount in cents refunded back to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount_refunded",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "2-letter ISO country code of the place of supply that is relevant for the `vat.rate`.",
+                        "type": "text/plain"
+                      },
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency.",
+                        "type": "text/plain"
+                      },
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string to describe the supplied item.",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`.",
+                        "type": "text/plain"
+                      },
+                      "key": "evidence",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering.",
+                        "type": "text/plain"
+                      },
+                      "key": "invoice_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "ISO date at which the invoice was issued to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "issued",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for the name of the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for additional notes.",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its valid value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating.",
+                        "type": "text/plain"
+                      },
+                      "key": "validation",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "inclusive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "rate",
+                      "value": "<double>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amount\": 852,\n  \"country_code\": \"st\",\n  \"currency\": \"str\",\n  \"invoice_number\": \"string\",\n  \"issued\": \"1983-07-19T07:51:21.256Z\",\n  \"amount_refunded\": 7424,\n  \"amount_total\": 7132,\n  \"created\": \"2009-10-03T14:59:45.557Z\",\n  \"description\": \"string\",\n  \"evidence\": {\n    \"bank_address\": {\n      \"country_code\": \"st\",\n      \"name\": \"string\"\n    },\n    \"billing_address\": {\n      \"city\": \"string\",\n      \"country_code\": \"st\",\n      \"line_1\": \"string\",\n      \"line_2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"created\": \"1953-08-05T21:04:11.983Z\",\n    \"ip_address\": {\n      \"label\": \"string\",\n      \"provider\": \"string\",\n      \"city\": \"string\",\n      \"country_code\": \"st\",\n      \"state\": \"string\"\n    },\n    \"id\": \"9f3b8833-53f5-8acc-948e-7c28a0158a17\",\n    \"required_count\": 9601,\n    \"updated\": \"1949-09-10T19:34:07.688Z\"\n  },\n  \"evidence_status\": \"string\",\n  \"id\": \"4b4238da-1c3f-911f-561b-3d467bb40685\",\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"updated\": \"2020-04-23T12:15:16.585Z\",\n  \"validation\": {\n    \"query\": \"string\",\n    \"active\": null,\n    \"code\": \"string\",\n    \"company_address\": null,\n    \"company_name\": null,\n    \"company_type\": null,\n    \"consultation_number\": null,\n    \"country_code\": \"st\",\n    \"created\": \"1992-06-28T17:51:25.368Z\",\n    \"id\": \"1dc0cfc8-400f-2579-65c1-bd799af313e0\",\n    \"requested\": \"2020-03-03T15:34:52.823Z\",\n    \"type\": \"eu_vat\",\n    \"updated\": \"2022-01-10T18:52:21.318Z\",\n    \"valid\": null,\n    \"valid_format\": true,\n    \"vat_number\": \"string\"\n  },\n  \"vat\": {\n    \"amount\": 8627,\n    \"inclusive\": false,\n    \"rate\": 5513.245367982463,\n    \"rate_type\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d2499ba-6c6d-491d-a3cd-5571ddea05f1",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount in **cents** (e.g. 100.50 must be expressed as 10050). This common common workaround prevents unexpected rounding issues.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount in cents refunded back to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount_refunded",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "2-letter ISO country code of the place of supply that is relevant for the `vat.rate`.",
+                        "type": "text/plain"
+                      },
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "3-letter ISO 4217 currency code used to charge the `amount`. The currency is used to correctly convert to your reporting currency.",
+                        "type": "text/plain"
+                      },
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string to describe the supplied item.",
+                        "type": "text/plain"
+                      },
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of an [evidence object](https://vatstack.com/docs/evidences). The pieces of non-contradictory evidence contained therein will affect the `evidence_status`.",
+                        "type": "text/plain"
+                      },
+                      "key": "evidence",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for the invoice number issued to the customer. It’s advisable to follow sequential numbering.",
+                        "type": "text/plain"
+                      },
+                      "key": "invoice_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "ISO date at which the invoice was issued to the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "issued",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for the name of the customer.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A custom string for additional notes.",
+                        "type": "text/plain"
+                      },
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Unique identifier of a [validation object](https://vatstack.com/docs/validations). This is useful if you let your customer enter a VAT number beforehand. Its valid value can affect `vat.amount`, `vat.rate` and `amount_total` when zero-rating.",
+                        "type": "text/plain"
+                      },
+                      "key": "validation",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "inclusive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "rate",
+                      "value": "<double>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2ef8c9e-d0ca-45b1-b1ad-1c07dccd3673",
+          "name": "Deletes a supply object by the {id} path parameter.",
+          "request": {
+            "name": "Deletes a supply object by the {id} path parameter.",
+            "description": {},
+            "url": {
+              "path": [
+                "supplies",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{basePath}}",
+                  "key": "basePath"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "02ff8711-c8f1-4beb-9e4e-cfa3728e1a4a",
+              "name": "Supply object successfully deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e0163ab9-dc47-44ed-8d62-fec431d44c8f",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "supplies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{basePath}}",
+                      "key": "basePath"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "v1",
+      "key": "basePath"
+    },
+    {
+      "type": "string",
+      "value": "https://api.vatstack.com/{{basePath}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1b24ab6f-e3f6-4a7d-8443-e6de3bdf3e92",
+    "name": "Vatstack API Specification Batches Supplies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.\n\nContact Support:\n Email: team@vatstack.com",
+      "type": "text/plain"
+    }
+  }
+}
