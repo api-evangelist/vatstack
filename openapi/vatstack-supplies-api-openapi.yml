@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Vatstack API Specification Batches Supplies API
+  title: Vatstack API Specification Supplies API
   description: A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
   contact:
     email: team@vatstack.com
@@ -17,7 +17,7 @@ paths:
   /supplies:
     post:
       operationId: createSupply
-      summary: Creates a supply object.
+      summary: Creates a supply object
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -94,7 +94,7 @@ paths:
       - Supplies
     get:
       operationId: getAllSupplies
-      summary: Retrieves all supply objects in order of creation, with the most recent appearing highest.
+      summary: Retrieves all supply objects in order of creation, with the most recent…
       parameters:
       - name: country_code
         in: query
@@ -165,7 +165,7 @@ paths:
   /supplies/{id}:
     get:
       operationId: getSupplyById
-      summary: Retrieves a supply object.
+      summary: Retrieves a supply object
       parameters:
       - name: id
         in: path
@@ -192,7 +192,7 @@ paths:
       - Supplies
     put:
       operationId: updateSupplyById
-      summary: Updates a supply object by the {id} path parameter.
+      summary: Updates a supply object by the {id} path parameter
       parameters:
       - name: id
         in: path
@@ -271,7 +271,7 @@ paths:
       - Supplies
     delete:
       operationId: deleteSupplyById
-      summary: Deletes a supply object by the {id} path parameter.
+      summary: Deletes a supply object by the {id} path parameter
       parameters:
       - name: id
         in: path
@@ -380,6 +380,80 @@ components:
           type: string
           description: Human-readable message providing more details about the error.
           maxLength: 250
+    evidence:
+      type: object
+      description: Store pieces of evidence that confirm your customer’s location. Evidence object can be attached to a supply object and it can only be attached to one supply object at a time.
+      properties:
+        bank_address:
+          type: object
+          properties:
+            country_code:
+              type: string
+              description: 2-letter ISO country code of the bank or payment source.
+              maxLength: 2
+              minLength: 2
+            name:
+              type: string
+              description: Name of the bank or payment source.
+        billing_address:
+          type: object
+          properties:
+            city:
+              type: string
+              description: City of the customer’s billing address.
+            country_code:
+              type: string
+              description: 2-letter ISO country code of the customer’s billing address.
+              maxLength: 2
+              minLength: 2
+            line_1:
+              type: string
+              description: Line 1 of the customer’s billing address.
+            line_2:
+              type: string
+              description: Line 2 of the customer’s billing address.
+            postal_code:
+              type: string
+              description: Postal code of the customer’s billing address.
+            state:
+              type: string
+              description: State of the customer’s billing address.
+        created:
+          type: string
+          description: ISO date at which the object was created.
+          format: date-time
+        ip_address:
+          type: object
+          properties:
+            label:
+              type: string
+              description: The same IP address coming from the `ip_address.label` body parameter which will be geolocated automatically.
+            provider:
+              type: string
+              description: Provider used to geolocate `ip_address.label`. We use MaxMind® GeoIP2 geolocation technology by default but have a number of fallback providers.
+            city:
+              type: string
+              description: City of the geolocated IP address.
+            country_code:
+              type: string
+              description: 2-letter ISO country code of the geolocated IP address.
+              maxLength: 2
+              minLength: 2
+            state:
+              type: string
+              description: State of the geolocated IP address.
+        id:
+          type: string
+          description: Unique identifier for the object.
+          format: uuid
+        required_count:
+          type: integer
+          description: Required pieces of evidence according to your account’s regional settings.
+          format: int32
+        updated:
+          type: string
+          description: ISO date at which the object was updated.
+          format: date-time
     supply:
       type: object
       description: Supplies are transactions of telecommunications, broadcasting and electronic (TBE) services. To document pieces of evidence for the place of supply, you can attach [evidence objects](https://vatstack.com/docs/evidences) to a supply object. Supplies are also used to automatically generate a quarterly tax report with currency conversion at official exchange rates.
@@ -466,80 +540,6 @@ components:
       - currency
       - invoice_number
       - issued
-    evidence:
-      type: object
-      description: Store pieces of evidence that confirm your customer’s location. Evidence object can be attached to a supply object and it can only be attached to one supply object at a time.
-      properties:
-        bank_address:
-          type: object
-          properties:
-            country_code:
-              type: string
-              description: 2-letter ISO country code of the bank or payment source.
-              maxLength: 2
-              minLength: 2
-            name:
-              type: string
-              description: Name of the bank or payment source.
-        billing_address:
-          type: object
-          properties:
-            city:
-              type: string
-              description: City of the customer’s billing address.
-            country_code:
-              type: string
-              description: 2-letter ISO country code of the customer’s billing address.
-              maxLength: 2
-              minLength: 2
-            line_1:
-              type: string
-              description: Line 1 of the customer’s billing address.
-            line_2:
-              type: string
-              description: Line 2 of the customer’s billing address.
-            postal_code:
-              type: string
-              description: Postal code of the customer’s billing address.
-            state:
-              type: string
-              description: State of the customer’s billing address.
-        created:
-          type: string
-          description: ISO date at which the object was created.
-          format: date-time
-        ip_address:
-          type: object
-          properties:
-            label:
-              type: string
-              description: The same IP address coming from the `ip_address.label` body parameter which will be geolocated automatically.
-            provider:
-              type: string
-              description: Provider used to geolocate `ip_address.label`. We use MaxMind® GeoIP2 geolocation technology by default but have a number of fallback providers.
-            city:
-              type: string
-              description: City of the geolocated IP address.
-            country_code:
-              type: string
-              description: 2-letter ISO country code of the geolocated IP address.
-              maxLength: 2
-              minLength: 2
-            state:
-              type: string
-              description: State of the geolocated IP address.
-        id:
-          type: string
-          description: Unique identifier for the object.
-          format: uuid
-        required_count:
-          type: integer
-          description: Required pieces of evidence according to your account’s regional settings.
-          format: int32
-        updated:
-          type: string
-          description: ISO date at which the object was updated.
-          format: date-time
   securitySchemes:
     publicKey:
       type: apiKey

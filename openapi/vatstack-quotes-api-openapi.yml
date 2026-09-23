@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Vatstack API Specification Batches Quotes API
+  title: Vatstack API Specification Quotes API
   description: A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
   contact:
     email: team@vatstack.com
@@ -17,7 +17,7 @@ paths:
   /quotes:
     post:
       operationId: createQuote
-      summary: Creates a quote object.
+      summary: Creates a quote object
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -69,7 +69,7 @@ paths:
       - Quotes
     get:
       operationId: getAllQuotes
-      summary: Retrieves all quote objects in order of creation, with the most recent appearing highest.
+      summary: Retrieves all quote objects in order of creation, with the most recent…
       parameters:
       - name: limit
         in: query
@@ -118,7 +118,7 @@ paths:
   /quotes/{id}:
     get:
       operationId: getQuoteById
-      summary: Retrieves a quote object.
+      summary: Retrieves a quote object
       parameters:
       - name: id
         in: path

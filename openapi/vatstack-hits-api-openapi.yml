@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Vatstack API Specification Batches Hits API
+  title: Vatstack API Specification Hits API
   description: A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
   contact:
     email: team@vatstack.com
@@ -17,7 +17,7 @@ paths:
   /hits:
     get:
       operationId: getAllHits
-      summary: This endpoint can be useful if you want to perform a quick check against your hits count before initiating an API request.
+      summary: This endpoint can be useful if you want to perform a quick check against your…
       responses:
         '200':
           description: Hits successfully retrieved.

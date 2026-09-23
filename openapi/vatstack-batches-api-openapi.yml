@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Vatstack API Specification Batches API
   description: A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
@@ -17,7 +17,7 @@ paths:
   /batches:
     post:
       operationId: createBatch
-      summary: Creates a batch object.
+      summary: Creates a batch object
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -54,7 +54,7 @@ paths:
       - Batches
     get:
       operationId: getAllBatches
-      summary: Retrieves all batch objects in order of creation, with the latest appearing highest.
+      summary: Retrieves all batch objects in order of creation, with the latest appearing…
       parameters:
       - name: limit
         in: query
@@ -108,7 +108,7 @@ paths:
   /batches/{id}:
     get:
       operationId: getBatchById
-      summary: Retrieves a batch object by the {id} path parameter.
+      summary: Retrieves a batch object by the {id} path parameter
       parameters:
       - name: id
         in: path
@@ -135,7 +135,7 @@ paths:
       - Batches
     put:
       operationId: updateBatchById
-      summary: Updates a batch object by the {id} path parameter.
+      summary: Updates a batch object by the {id} path parameter
       parameters:
       - name: id
         in: path
@@ -188,7 +188,7 @@ paths:
       - Batches
     delete:
       operationId: deleteBatchById
-      summary: Deletes a batch object by the {id} path parameter.
+      summary: Deletes a batch object by the {id} path parameter
       parameters:
       - name: id
         in: path
@@ -285,18 +285,6 @@ components:
           description: VAT number extracted from your query without the country code.
       required:
       - query
-    error:
-      type: object
-      description: Error response from the Vatstack API.
-      properties:
-        code:
-          type: string
-          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
-          maxLength: 50
-        message:
-          type: string
-          description: Human-readable message providing more details about the error.
-          maxLength: 250
     batch:
       type: object
       description: Batch mass VAT number validations for due dates. Add VAT numbers in bulk or append VAT numbers incrementally to your existing batch process, then start it whenever required.
@@ -341,6 +329,18 @@ components:
             $ref: '#/components/schemas/validation'
       required:
       - name
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
   securitySchemes:
     publicKey:
       type: apiKey

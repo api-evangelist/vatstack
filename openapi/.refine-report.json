@@ -1,13 +1,7 @@
 {
   "provider": "vatstack",
   "sources": [
-    "vatstack-batches-api-openapi.yml",
-    "vatstack-evidences-api-openapi.yml",
-    "vatstack-hits-api-openapi.yml",
-    "vatstack-quotes-api-openapi.yml",
-    "vatstack-rates-api-openapi.yml",
-    "vatstack-supplies-api-openapi.yml",
-    "vatstack-validations-api-openapi.yml"
+    "_original/vatstack-openapi.json"
   ],
   "outputs": [
     "vatstack-batches-api-openapi.yml",
@@ -21,6 +15,48 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "vatstack-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "vatstack-openapi.json: tagged paths POST /batches -> Batches",
+    "vatstack-openapi.json: tagged paths GET /batches -> Batches",
+    "vatstack-openapi.json: tagged paths GET /batches/{id} -> Batches",
+    "vatstack-openapi.json: tagged paths PUT /batches/{id} -> Batches",
+    "vatstack-openapi.json: tagged paths DELETE /batches/{id} -> Batches",
+    "vatstack-openapi.json: tagged paths POST /evidences -> Evidences",
+    "vatstack-openapi.json: tagged paths GET /evidences -> Evidences",
+    "vatstack-openapi.json: tagged paths GET /evidences/{id} -> Evidences",
+    "vatstack-openapi.json: tagged paths PUT /evidences/{id} -> Evidences",
+    "vatstack-openapi.json: tagged paths GET /hits -> Hits",
+    "vatstack-openapi.json: tagged paths POST /quotes -> Quotes",
+    "vatstack-openapi.json: tagged paths GET /quotes -> Quotes",
+    "vatstack-openapi.json: tagged paths GET /quotes/{id} -> Quotes",
+    "vatstack-openapi.json: tagged paths GET /rates -> Rates",
+    "vatstack-openapi.json: tagged paths GET /rates/geolocate -> Rates",
+    "vatstack-openapi.json: tagged paths POST /supplies -> Supplies",
+    "vatstack-openapi.json: tagged paths GET /supplies -> Supplies",
+    "vatstack-openapi.json: tagged paths GET /supplies/{id} -> Supplies",
+    "vatstack-openapi.json: tagged paths PUT /supplies/{id} -> Supplies",
+    "vatstack-openapi.json: tagged paths DELETE /supplies/{id} -> Supplies",
+    "vatstack-openapi.json: tagged paths POST /validations -> Validations",
+    "vatstack-openapi.json: tagged paths GET /validations -> Validations",
+    "vatstack-openapi.json: tagged paths GET /validations/{id} -> Validations",
+    "vatstack-openapi.json: declared missing tag: Batches",
+    "vatstack-openapi.json: declared missing tag: Evidences",
+    "vatstack-openapi.json: declared missing tag: Hits",
+    "vatstack-openapi.json: declared missing tag: Quotes",
+    "vatstack-openapi.json: declared missing tag: Rates",
+    "vatstack-openapi.json: declared missing tag: Supplies",
+    "vatstack-openapi.json: declared missing tag: Validations",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "vatstack-batches-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vatstack-evidences-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vatstack-hits-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vatstack-quotes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vatstack-rates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vatstack-supplies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vatstack-validations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

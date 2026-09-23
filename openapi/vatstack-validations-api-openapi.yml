@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Vatstack API Specification Batches Validations API
+  title: Vatstack API Specification Validations API
   description: A suite of VAT APIs which let you validate VAT numbers with government services, look up VAT rates by ISO country code, calculate price quotes with centralized VAT rules and store transactions with each sale for VAT reporting.
   contact:
     email: team@vatstack.com
@@ -17,7 +17,7 @@ paths:
   /validations:
     post:
       operationId: createValidation
-      summary: Creates a validation object.
+      summary: Creates a validation object
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -67,7 +67,7 @@ paths:
       - Validations
     get:
       operationId: getAllValidations
-      summary: Retrieves all validation objects in order of creation, with the most recent appearing highest.
+      summary: Retrieves all validation objects in order of creation, with the most recent…
       parameters:
       - name: batch
         in: query
@@ -152,7 +152,7 @@ paths:
   /validations/{id}:
     get:
       operationId: getValidationById
-      summary: Retrieves a validation object.
+      summary: Retrieves a validation object
       parameters:
       - name: id
         in: path
