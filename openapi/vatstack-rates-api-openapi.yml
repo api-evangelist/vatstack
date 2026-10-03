@@ -104,18 +104,6 @@ paths:
       - Rates
 components:
   schemas:
-    error:
-      type: object
-      description: Error response from the Vatstack API.
-      properties:
-        code:
-          type: string
-          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
-          maxLength: 50
-        message:
-          type: string
-          description: Human-readable message providing more details about the error.
-          maxLength: 250
     rate:
       type: object
       description: Keep the rates of your application up-to-date with a regular VAT rate lookup. This ensures that your invoice states the correct VAT across EU Member States. We have also started to add countries outside the EU and will keep them updated.
@@ -179,6 +167,18 @@ components:
         vat_local_name:
           type: string
           description: Localized name of the VAT.
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
   securitySchemes:
     publicKey:
       type: apiKey

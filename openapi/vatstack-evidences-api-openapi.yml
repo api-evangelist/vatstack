@@ -226,18 +226,6 @@ paths:
       - Evidences
 components:
   schemas:
-    error:
-      type: object
-      description: Error response from the Vatstack API.
-      properties:
-        code:
-          type: string
-          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
-          maxLength: 50
-        message:
-          type: string
-          description: Human-readable message providing more details about the error.
-          maxLength: 250
     evidence:
       type: object
       description: Store pieces of evidence that confirm your customer’s location. Evidence object can be attached to a supply object and it can only be attached to one supply object at a time.
@@ -312,6 +300,18 @@ components:
           type: string
           description: ISO date at which the object was updated.
           format: date-time
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
   securitySchemes:
     publicKey:
       type: apiKey

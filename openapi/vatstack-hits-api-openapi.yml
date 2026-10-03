@@ -38,18 +38,6 @@ paths:
       - Hits
 components:
   schemas:
-    error:
-      type: object
-      description: Error response from the Vatstack API.
-      properties:
-        code:
-          type: string
-          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
-          maxLength: 50
-        message:
-          type: string
-          description: Human-readable message providing more details about the error.
-          maxLength: 250
     hit:
       type: object
       description: Retrieve the number of hits you have used for the running month and the total capacity allocated to your current subscription plan.
@@ -76,6 +64,18 @@ components:
               type: integer
               description: Validations created during the running month. Additional requests beyond `capacity` will be charged according to the plan you’re subscribed to.
               format: int32
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
   securitySchemes:
     publicKey:
       type: apiKey
