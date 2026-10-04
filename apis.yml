@@ -197,6 +197,9 @@ apis:
   - type: FinOps
     url: finops/vatstack-finops.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/vatstack-capability-edges.yml
+    name: Vatstack Business Capability Map
   - type: AgenticAccess
     url: agentic-access/vatstack-agentic-access.yml
   - type: VulnerabilityDisclosure

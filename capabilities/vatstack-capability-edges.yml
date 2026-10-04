@@ -1,0 +1,45 @@
+slug: vatstack
+provider: Vatstack
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Rates
+  spec_file: vatstack-rates-api-openapi.yml
+  capability_id: BC-220.20
+  capability_id_l1: BC-220
+  capability_name: Indirect Tax Management
+  confidence: 0.82
+  evidence: GET /rates "Retrieves all VAT rate objects, including standard VAT rates and VAT rates for…";
+    GET /rates/geolocate "Retrieves a geolocated VAT rate by IP address"
+  reason: Serving VAT rates by country/jurisdiction is VAT (indirect tax) rate determination — core Indirect
+    Tax Management.
+- tag: Validations
+  spec_file: vatstack-validations-api-openapi.yml
+  capability_id: BC-220.20
+  capability_id_l1: BC-220
+  capability_name: Indirect Tax Management
+  confidence: 0.8
+  evidence: 'POST /validations "Creates a validation object"; vendor: "validating European business VAT
+    IDs via VIES"'
+  reason: Validation objects are VAT number checks against government services (VIES) — an indirect tax
+    compliance control, not generic input validation.
+- tag: Quotes
+  spec_file: vatstack-quotes-api-openapi.yml
+  capability_id: BC-220.20
+  capability_id_l1: BC-220
+  capability_name: Indirect Tax Management
+  confidence: 0.7
+  evidence: '"calculate price quotes with centralized VAT rules"; POST /quotes "Creates a quote object";
+    schemas "validation, quote, error"'
+  reason: Despite the sales-sounding tag, a quote here is a VAT-inclusive price calculation driven by
+    centralized VAT rules — indirect tax determination, not CPQ sales quoting.
