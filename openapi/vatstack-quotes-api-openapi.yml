@@ -145,6 +145,87 @@ paths:
       - Quotes
 components:
   schemas:
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
+    quote:
+      type: object
+      description: The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the entire VAT-compliant business logic for you. All VAT rules have been centralized so that every response is directly actionable.
+      properties:
+        amount:
+          type: integer
+          format: int32
+        amount_total:
+          type: integer
+          format: int32
+        category:
+          type: string
+          description: Category of the digital product. Defaults to `null` if no category was specified in the request or if the category cannot be applied for the `country_code`.
+        country_code:
+          type: string
+          description: 2-letter ISO country code.
+          maxLength: 2
+          minLength: 2
+        country_name:
+          type: string
+          description: Corresponding English name of `country_code`.
+        created:
+          type: string
+          description: ISO date at which the object was created.
+          format: date-time
+        id:
+          type: string
+          description: Unique identifier for the object.
+          format: uuid
+        ip_address:
+          type: string
+          description: The same IP address coming from the `ip_address` body parameter, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided.
+        local_name:
+          type: string
+          description: Localized name of the VAT identification number.
+        member_state:
+          type: boolean
+          description: Boolean indicating whether `country_code` is an EU member state.
+        updated:
+          type: string
+          description: ISO date at which the object was updated.
+          format: date-time
+        validation:
+          type: object
+          $ref: '#/components/schemas/validation'
+        vat:
+          type: object
+          properties:
+            abbreviation:
+              type: string
+              description: Abbreviation of `vat.local_name`.
+            amount:
+              type: integer
+              description: VAT amount in cents.
+              format: int32
+            inclusive:
+              type: string
+              description: Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay.
+              default: false
+            local_name:
+              type: string
+              description: Localized name of the VAT.
+            rate:
+              type: number
+              description: VAT rate applied for the calculation. If member_state is `false`, the value will be `0`.
+              format: double
+            rate_type:
+              type: string
+              description: Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`.
     validation:
       type: object
       description: Validate your business customer’s VAT number against official government servers in real-time. The API asynchronously validates VAT numbers for you if government services experience downtime.
@@ -219,87 +300,6 @@ components:
           description: VAT number extracted from your query without the country code.
       required:
       - query
-    quote:
-      type: object
-      description: The quote object combines the best of the [rate object](https://vatstack.com/docs/rates) and [validation object](https://vatstack.com/docs/validations) and takes them a step further. It uses your existing business information to perform the entire VAT-compliant business logic for you. All VAT rules have been centralized so that every response is directly actionable.
-      properties:
-        amount:
-          type: integer
-          format: int32
-        amount_total:
-          type: integer
-          format: int32
-        category:
-          type: string
-          description: Category of the digital product. Defaults to `null` if no category was specified in the request or if the category cannot be applied for the `country_code`.
-        country_code:
-          type: string
-          description: 2-letter ISO country code.
-          maxLength: 2
-          minLength: 2
-        country_name:
-          type: string
-          description: Corresponding English name of `country_code`.
-        created:
-          type: string
-          description: ISO date at which the object was created.
-          format: date-time
-        id:
-          type: string
-          description: Unique identifier for the object.
-          format: uuid
-        ip_address:
-          type: string
-          description: The same IP address coming from the `ip_address` body parameter, or the geolocated IP address if none was provided. Value is `null` if `country_code` was provided.
-        local_name:
-          type: string
-          description: Localized name of the VAT identification number.
-        member_state:
-          type: boolean
-          description: Boolean indicating whether `country_code` is an EU member state.
-        updated:
-          type: string
-          description: ISO date at which the object was updated.
-          format: date-time
-        validation:
-          type: object
-          $ref: '#/components/schemas/validation'
-        vat:
-          type: object
-          properties:
-            abbreviation:
-              type: string
-              description: Abbreviation of `vat.local_name`.
-            amount:
-              type: integer
-              description: VAT amount in cents.
-              format: int32
-            inclusive:
-              type: string
-              description: Specifies if the `amount_total` is inclusive (common for EU consumers) or exclusive of VAT. This affects how the `vat.amount` is calculated. If `false`, you should present `amount` plus `vat.amount` to your customer as the final price to pay.
-              default: false
-            local_name:
-              type: string
-              description: Localized name of the VAT.
-            rate:
-              type: number
-              description: VAT rate applied for the calculation. If member_state is `false`, the value will be `0`.
-              format: double
-            rate_type:
-              type: string
-              description: Automatically determined type of VAT rate based on inputs. Can be `null`, `exempt`, `reduced`, `reverse_charge`, `standard` or `zero`.
-    error:
-      type: object
-      description: Error response from the Vatstack API.
-      properties:
-        code:
-          type: string
-          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
-          maxLength: 50
-        message:
-          type: string
-          description: Human-readable message providing more details about the error.
-          maxLength: 250
   securitySchemes:
     publicKey:
       type: apiKey

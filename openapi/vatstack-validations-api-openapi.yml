@@ -180,6 +180,18 @@ paths:
       - Validations
 components:
   schemas:
+    error:
+      type: object
+      description: Error response from the Vatstack API.
+      properties:
+        code:
+          type: string
+          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
+          maxLength: 50
+        message:
+          type: string
+          description: Human-readable message providing more details about the error.
+          maxLength: 250
     validation:
       type: object
       description: Validate your business customer’s VAT number against official government servers in real-time. The API asynchronously validates VAT numbers for you if government services experience downtime.
@@ -254,18 +266,6 @@ components:
           description: VAT number extracted from your query without the country code.
       required:
       - query
-    error:
-      type: object
-      description: Error response from the Vatstack API.
-      properties:
-        code:
-          type: string
-          description: For validations, a short string indicating the [error code](https://vatstack.com/docs/validations).
-          maxLength: 50
-        message:
-          type: string
-          description: Human-readable message providing more details about the error.
-          maxLength: 250
   securitySchemes:
     publicKey:
       type: apiKey
