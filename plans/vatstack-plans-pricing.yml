@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Vatstack Plans and Pricing
 description: Pricing plans for Vatstack VAT validation and EU tax rates API service covering VAT number validation, tax rate lookups, price quotes, and compliance record storage.
 url: https://vatstack.com/pricing
@@ -62,3 +66,29 @@ plans:
       supplies_included: 3000
       validations_overage_per_unit: 0.01
       supplies_overage_per_unit: 0.05
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Developer
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Small Business
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
